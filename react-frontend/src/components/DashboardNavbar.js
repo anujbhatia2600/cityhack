@@ -18,37 +18,36 @@ const DashboardNavbar = ({ onMobileNavOpen, ...rest }) => {
   const [notifications] = useState([]);
 
   return (
-    <></>
-    // <AppBar
-    //   elevation={0}
-    //   {...rest}
-    // >
-    //   <Toolbar>
-    //     <RouterLink to="/">
-    //       <Logo height="40px"/>
-    //     </RouterLink>
-    //     <Box sx={{ flexGrow: 1 }} />
-    //     <Hidden xlDown>
-    //       <IconButton color="inherit" size="large">
-    //         <Badge
-    //           badgeContent={notifications.length}
-    //           color="primary"
-    //           variant="dot"
-    //         >
-    //           <NotificationsIcon />
-    //         </Badge>
-    //       </IconButton>
-    //       <IconButton color="inherit" size="large">
-    //         <InputIcon />
-    //       </IconButton>
-    //     </Hidden>
-    //     <Hidden lgUp>
-    //       <IconButton color="inherit" onClick={onMobileNavOpen} size="large">
-    //         <MenuIcon />
-    //       </IconButton>
-    //     </Hidden>
-    //   </Toolbar>
-    // </AppBar>
+    <AppBar
+      elevation={0}
+      {...rest}
+    >
+      <Toolbar>
+        <RouterLink to="/">
+          <Logo height="40px"/>
+        </RouterLink>
+        <Box sx={{ flexGrow: 1 }} />
+        <Hidden xlDown>
+          <IconButton color="inherit" size="large">
+            <Badge
+              badgeContent={notifications.length}
+              color="primary"
+              variant="dot"
+            >
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+          <IconButton color="inherit" size="large">
+            <InputIcon />
+          </IconButton>
+        </Hidden>
+        <Hidden lgUp>
+          <IconButton color="inherit" onClick={onMobileNavOpen} size="large">
+            <MenuIcon />
+          </IconButton>
+        </Hidden>
+      </Toolbar>
+    </AppBar>
   );
 };
 
