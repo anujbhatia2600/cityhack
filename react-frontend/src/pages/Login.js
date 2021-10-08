@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as Yup from 'yup';
@@ -11,12 +13,10 @@ import {
   TextField,
   Typography
 } from '@material-ui/core';
-import FacebookIcon from '../icons/Facebook';
-import GoogleIcon from '../icons/Google';
 
 const Login = () => {
   const navigate = useNavigate();
-
+  const [error, setError] = React.useState(false);
   return (
     <>
       <Helmet>
@@ -34,15 +34,19 @@ const Login = () => {
         <Container maxWidth="sm">
           <Formik
             initialValues={{
-              email: 'demo@devias.io',
+              email: 'rpo1@asiadhrass.io',
               password: 'Password123'
             }}
             validationSchema={Yup.object().shape({
               email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
               password: Yup.string().max(255).required('Password is required')
             })}
-            onSubmit={() => {
-              navigate('/app/dashboard', { replace: true });
+            onSubmit={(values) => {
+              if (values.email === 'rpo1@asiadhrass.io' && values.password === 'Password123') {
+                navigate('/app/dashboard', { replace: true });
+              } else {
+                setError(true);
+              }
             }}
           >
             {({
@@ -68,56 +72,6 @@ const Login = () => {
                     variant="body2"
                   >
                     Sign in on the internal platform
-                  </Typography>
-                </Box>
-                <Grid
-                  container
-                  spacing={3}
-                >
-                  <Grid
-                    item
-                    xs={12}
-                    md={6}
-                  >
-                    <Button
-                      color="primary"
-                      fullWidth
-                      startIcon={<FacebookIcon />}
-                      onClick={handleSubmit}
-                      size="large"
-                      variant="contained"
-                    >
-                      Login with Facebook
-                    </Button>
-                  </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    md={6}
-                  >
-                    <Button
-                      fullWidth
-                      startIcon={<GoogleIcon />}
-                      onClick={handleSubmit}
-                      size="large"
-                      variant="contained"
-                    >
-                      Login with Google
-                    </Button>
-                  </Grid>
-                </Grid>
-                <Box
-                  sx={{
-                    pb: 1,
-                    pt: 3
-                  }}
-                >
-                  <Typography
-                    align="center"
-                    color="textSecondary"
-                    variant="body1"
-                  >
-                    or login with email address
                   </Typography>
                 </Box>
                 <TextField
@@ -149,7 +103,7 @@ const Login = () => {
                 <Box sx={{ py: 2 }}>
                   <Button
                     color="primary"
-                    disabled={isSubmitting}
+                    // disabled={isSubmitting}
                     fullWidth
                     size="large"
                     type="submit"
@@ -158,6 +112,18 @@ const Login = () => {
                     Sign in now
                   </Button>
                 </Box>
+                {error ? (
+                  <Typography
+                    color="error"
+                    variant="body1"
+                  >
+                    Incorrect Email or Password!
+                    {' '}
+                    <Link component={RouterLink} to="/login" color="error" variant="body1" underline="hover">
+                      Try Again
+                    </Link>
+                  </Typography>
+                ) : ''}
                 <Typography
                   color="textSecondary"
                   variant="body1"

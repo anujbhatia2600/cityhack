@@ -9,6 +9,9 @@ import NotFound from './pages/NotFound';
 import ProductList from './pages/ProductList';
 import Register from './pages/Register';
 import Settings from './pages/Settings';
+import Inbox from './pages/Inbox';
+import Kanban from './pages/Kanban';
+import Network from './pages/Network';
 
 const routes = [
   {
@@ -17,9 +20,12 @@ const routes = [
     children: [
       { path: 'account', element: <Account /> },
       { path: 'customers', element: <CustomerList /> },
+      { path: 'network', element: <Network /> },
       { path: 'dashboard', element: <Dashboard /> },
+      { path: 'kanban', element: <Kanban/>},
       { path: 'products', element: <ProductList /> },
       { path: 'settings', element: <Settings /> },
+      { path: 'inbox', element: <Inbox /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },
