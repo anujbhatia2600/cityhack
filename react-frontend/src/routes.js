@@ -10,6 +10,7 @@ import ProductList from './pages/ProductList';
 import Register from './pages/Register';
 import Settings from './pages/Settings';
 import Kanban from './pages/Kanban';
+import Network from './pages/Network';
 
 const routes = [
   {
@@ -18,6 +19,7 @@ const routes = [
     children: [
       { path: 'account', element: <Account /> },
       { path: 'customers', element: <CustomerList /> },
+      { path: 'network', element: <Network /> },
       { path: 'dashboard', element: <Dashboard /> },
       { path: 'kanban', element: <Kanban/>},
       { path: 'products', element: <ProductList /> },
