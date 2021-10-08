@@ -11,6 +11,7 @@ import Settings from './pages/Settings';
 import Inbox from './pages/Inbox';
 import Kanban from './pages/Kanban';
 import Network from './pages/Network';
+import TextConverter from './pages/TextConverter';
 
 const routes = [
   {
@@ -24,6 +25,7 @@ const routes = [
       { path: 'products', element: <ProductList /> },
       { path: 'settings', element: <Settings /> },
       { path: 'inbox', element: <Inbox /> },
+      { path: 'text-converter', element: <TextConverter/>},
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },

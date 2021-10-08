@@ -22,7 +22,8 @@ import {
   Users as UsersIcon,
   Inbox as InboxIcon,
   DollarSign as DollarIcon,
-  List as ListIcon
+  List as ListIcon,
+  Type as TypeIcon
 } from 'react-feather';
 import NavItem from './NavItem';
 
@@ -52,6 +53,11 @@ const items = [
     href: '/app/products',
     icon: DollarIcon,
     title: 'Government Funds'
+  },
+  {
+    href: '/app/text-converter',
+    icon : TypeIcon,
+    title : 'Convert Text Data'
   },
   {
     href: '/app/inbox',
