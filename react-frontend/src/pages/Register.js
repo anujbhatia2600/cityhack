@@ -40,7 +40,10 @@ const Register = () => {
               password: '',
               country: '',
               address: '',
-              policy: false,
+              association: false,
+              NGO: false,
+              foundation: false,
+              networkNGO: false,
               gender: '',
               contactPerson: '',
               contactPersonPosition: '',
@@ -77,12 +80,12 @@ const Register = () => {
                   <Typography
                     color="textPrimary"
                     variant="h2"
+                    gutterBottm
                   >
                     Create new account
                   </Typography>
                   <Typography
                     color="textSecondary"
-                    gutterBottom
                     variant="body2"
                   >
                     Use your email to create new account
@@ -103,6 +106,7 @@ const Register = () => {
                 <Typography
                   color="textPrimary"
                   variant="h4"
+                  gutterBottom
                 >
                   Legal Form
                 </Typography>
@@ -207,6 +211,7 @@ const Register = () => {
                 <Typography
                   color="textPrimary"
                   variant="h4"
+                  gutterBottom
                 >
                   Contact Person
                 </Typography>

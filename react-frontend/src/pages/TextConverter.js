@@ -40,7 +40,10 @@ const TextConverter = () => {
                 password: '',
                 country: '',
                 address: '',
-                policy: false,
+                association: false,
+                NGO: false,
+                foundation: false,
+                networkNGO: false,
                 gender: '',
                 contactPerson: '',
                 contactPersonPosition: '',
@@ -134,8 +137,8 @@ const TextConverter = () => {
                     }}
                   >
                     <Checkbox
-                      checked={values.policy}
-                      name="policy"
+                      checked={values.association}
+                      name="association"
                       onChange={handleChange}
                     />
                     <Typography
@@ -145,8 +148,8 @@ const TextConverter = () => {
                       Association
                     </Typography>
                     <Checkbox
-                      checked={values.policy}
-                      name="policy"
+                      checked={values.NGO}
+                      name="NGO"
                       onChange={handleChange}
                     />
                     <Typography
@@ -156,8 +159,8 @@ const TextConverter = () => {
                       NGO
                     </Typography>
                     <Checkbox
-                      checked={values.policy}
-                      name="policy"
+                      checked={values.foundation}
+                      name="foundation"
                       onChange={handleChange}
                     />
                     <Typography
@@ -166,7 +169,11 @@ const TextConverter = () => {
                     >
                       Foundation
                     </Typography>
-                    <Checkbox />
+                    <Checkbox 
+                        checked={values.networkNGO}
+                        name="networkNGO"
+                        onChange={handleChange}
+                    />
                     <Typography
                       color="textSecondary"
                       variant="body1"
