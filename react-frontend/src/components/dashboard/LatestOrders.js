@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { v4 as uuid } from 'uuid';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {
@@ -21,69 +20,69 @@ import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 const orders = [
   {
     id: uuid(),
-    ref: 'CDD1049',
+    ref: 'Calamansi Production Technology Trainings',
     amount: 30.5,
     customer: {
-      name: 'Ekaterina Tankova'
+      name: 'Asiadhrra and GA'
     },
-    createdAt: 1555016400000,
+    createdAt: 'Dec 2021',
     status: 'pending'
   },
   {
     id: uuid(),
-    ref: 'CDD1048',
+    ref: 'Development of Calamansi Learning Site with IDOFS',
     amount: 25.1,
     customer: {
-      name: 'Cao Yu'
+      name: 'Asiadhrra and DAR'
     },
-    createdAt: 1555016400000,
-    status: 'delivered'
+    createdAt: 'Aug 2021',
+    status: 'ongoing'
   },
   {
     id: uuid(),
-    ref: 'CDD1047',
+    ref: 'Construction of new processing facility',
     amount: 10.99,
     customer: {
       name: 'Alexa Richardson'
     },
-    createdAt: 1554930000000,
-    status: 'refunded'
+    createdAt: 'Feb 2021',
+    status: 'ongoing'
   },
   {
     id: uuid(),
-    ref: 'CDD1046',
+    ref: 'Construction of water refilling station (Completion)',
     amount: 96.43,
     customer: {
-      name: 'Anje Keizer'
+      name: 'DTI and ADMU'
     },
-    createdAt: 1554757200000,
-    status: 'pending'
+    createdAt: 'July 2020',
+    status: 'finished'
   },
   {
     id: uuid(),
-    ref: 'CDD1045',
+    ref: 'Construction of water services facility',
     amount: 32.54,
     customer: {
-      name: 'Clarke Gillebert'
+      name: 'Asiadhrra and MARCCO'
     },
-    createdAt: 1554670800000,
-    status: 'delivered'
+    createdAt: 'May 2020',
+    status: 'finished'
   },
   {
     id: uuid(),
-    ref: 'CDD1044',
+    ref: 'Renovation of existing office/meeting hall',
     amount: 16.76,
     customer: {
-      name: 'Adam Denisov'
+      name: 'Asiadhrra'
     },
-    createdAt: 1554670800000,
-    status: 'delivered'
+    createdAt: 'Dec 2021',
+    status: 'finished'
   }
 ];
 
 const LatestOrders = (props) => (
   <Card {...props}>
-    <CardHeader title="Latest Orders" />
+    <CardHeader title="Previous Projects" />
     <Divider />
     <PerfectScrollbar>
       <Box sx={{ minWidth: 800 }}>
@@ -91,10 +90,10 @@ const LatestOrders = (props) => (
           <TableHead>
             <TableRow>
               <TableCell>
-                Order Ref
+                Project Title
               </TableCell>
               <TableCell>
-                Customer
+                Funding Partner
               </TableCell>
               <TableCell sortDirection="desc">
                 <Tooltip
@@ -105,7 +104,7 @@ const LatestOrders = (props) => (
                     active
                     direction="desc"
                   >
-                    Date
+                    Start Date
                   </TableSortLabel>
                 </Tooltip>
               </TableCell>
@@ -127,7 +126,7 @@ const LatestOrders = (props) => (
                   {order.customer.name}
                 </TableCell>
                 <TableCell>
-                  {moment(order.createdAt).format('DD/MM/YYYY')}
+                  {order.createdAt}
                 </TableCell>
                 <TableCell>
                   <Chip
