@@ -10,7 +10,9 @@ import {
   FormHelperText,
   Link,
   TextField,
-  Typography
+  Typography,
+  Select,
+  MenuItem
 } from '@material-ui/core';
 
 const Register = () => {
@@ -19,7 +21,7 @@ const Register = () => {
   return (
     <>
       <Helmet>
-        <title>Register | Material Kit</title>
+        <title>Register RPO</title>
       </Helmet>
       <Box
         sx={{
@@ -30,25 +32,34 @@ const Register = () => {
           justifyContent: 'center'
         }}
       >
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" style={{ overflow: 'auto' }}>
           <Formik
             initialValues={{
               email: '',
-              firstName: '',
-              lastName: '',
+              orgName: '',
               password: '',
-              policy: false
+              country: '',
+              address: '',
+              policy: false,
+              gender: '',
+              contactPerson: '',
+              contactPersonPosition: '',
             }}
             validationSchema={
             Yup.object().shape({
               email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-              firstName: Yup.string().max(255).required('First name is required'),
-              lastName: Yup.string().max(255).required('Last name is required'),
+              orgName: Yup.string().max(255).required('Organization name is required'),
               password: Yup.string().max(255).required('password is required'),
-              policy: Yup.boolean().oneOf([true], 'This field must be checked')
+              policy: Yup.boolean().oneOf([true], 'This field must be checked'),
+              country: Yup.string().max(255).required('Country is required'),
+              address: Yup.string().max(255).required('address is required'),
+              gender: Yup.string().max(255).required('gender is required'),
+              contactPerson: Yup.string().max(255).required('Contact Person is required'),
+              contactPersonPosition: Yup.string().max(255).required('Required'),
             })
           }
-            onSubmit={() => {
+            onSubmit={(values) => {
+              console.log(values);
               navigate('/app/dashboard', { replace: true });
             }}
           >
@@ -78,29 +89,71 @@ const Register = () => {
                   </Typography>
                 </Box>
                 <TextField
-                  error={Boolean(touched.firstName && errors.firstName)}
+                  error={Boolean(touched.orgName && errors.orgName)}
                   fullWidth
-                  helperText={touched.firstName && errors.firstName}
-                  label="First name"
+                  helperText={touched.orgName && errors.orgName}
+                  label="Name of the organization"
                   margin="normal"
-                  name="firstName"
+                  name="orgName"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  value={values.firstName}
+                  value={values.orgName}
                   variant="outlined"
                 />
-                <TextField
-                  error={Boolean(touched.lastName && errors.lastName)}
-                  fullWidth
-                  helperText={touched.lastName && errors.lastName}
-                  label="Last name"
-                  margin="normal"
-                  name="lastName"
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  value={values.lastName}
-                  variant="outlined"
-                />
+                <Typography
+                  color="textPrimary"
+                  variant="h4"
+                >
+                  Legal Form
+                </Typography>
+                <Box
+                  sx={{
+                    alignItems: 'center',
+                    display: 'flex',
+                    ml: -1
+                  }}
+                >
+                  <Checkbox
+                    checked={values.policy}
+                    name="policy"
+                    onChange={handleChange}
+                  />
+                  <Typography
+                    color="textSecondary"
+                    variant="body1"
+                  >
+                    Association
+                  </Typography>
+                  <Checkbox
+                    checked={values.policy}
+                    name="policy"
+                    onChange={handleChange}
+                  />
+                  <Typography
+                    color="textSecondary"
+                    variant="body1"
+                  >
+                    NGO
+                  </Typography>
+                  <Checkbox
+                    checked={values.policy}
+                    name="policy"
+                    onChange={handleChange}
+                  />
+                  <Typography
+                    color="textSecondary"
+                    variant="body1"
+                  >
+                    Foundation
+                  </Typography>
+                  <Checkbox />
+                  <Typography
+                    color="textSecondary"
+                    variant="body1"
+                  >
+                    Network of NGOs
+                  </Typography>
+                </Box>
                 <TextField
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
@@ -127,6 +180,76 @@ const Register = () => {
                   value={values.password}
                   variant="outlined"
                 />
+                <TextField
+                  error={Boolean(touched.country && errors.country)}
+                  fullWidth
+                  helperText={touched.country && errors.country}
+                  label="Country"
+                  margin="normal"
+                  name="country"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.country}
+                  variant="outlined"
+                />
+                <TextField
+                  error={Boolean(touched.address && errors.address)}
+                  fullWidth
+                  helperText={touched.address && errors.address}
+                  label="Address"
+                  margin="normal"
+                  name="address"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.address}
+                  variant="outlined"
+                />
+                <Typography
+                  color="textPrimary"
+                  variant="h4"
+                >
+                  Contact Person
+                </Typography>
+                <TextField
+                  error={Boolean(touched.contactPerson && errors.contactPerson)}
+                  fullWidth
+                  helperText={touched.contactPerson && errors.contactPerson}
+                  label="Contact Person Name"
+                  margin="normal"
+                  name="contactPerson"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.contactPerson}
+                  variant="outlined"
+                />
+                <Select
+                  error={Boolean(touched.gender && errors.gender)}
+                  fullWidth
+                  helperText={touched.gender && errors.gender}
+                  label="Gender"
+                  name="gender"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.gender}
+                  variant="outlined"
+                >
+                  <MenuItem value={10}>Male</MenuItem>
+                  <MenuItem value={20}>Female</MenuItem>
+                  <MenuItem value={30}>Prefer not to say</MenuItem>
+                </Select>
+                <TextField
+                  error={Boolean(touched.contactPersonPosition && errors.contactPersonPosition)}
+                  fullWidth
+                  helperText={touched.contactPersonPosition && errors.contactPersonPosition}
+                  label="Contact Person Position"
+                  margin="normal"
+                  name="contactPersonPosition"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.contactPersonPosition}
+                  variant="outlined"
+                />
+
                 <Box
                   sx={{
                     alignItems: 'center',
