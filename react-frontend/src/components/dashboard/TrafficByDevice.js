@@ -19,7 +19,7 @@ const TrafficByDevice = (props) => {
   const data = {
     datasets: [
       {
-        data: [63, 15, 22],
+        data: [15, 27, 58],
         backgroundColor: [
           colors.indigo[500],
           colors.red[600],
@@ -30,7 +30,7 @@ const TrafficByDevice = (props) => {
         hoverBorderColor: colors.common.white
       }
     ],
-    labels: ['Desktop', 'Tablet', 'Mobile']
+    labels: ['Ongoing', 'Accomplished', 'In the list']
   };
 
   const options = {
@@ -57,20 +57,20 @@ const TrafficByDevice = (props) => {
 
   const devices = [
     {
-      title: 'Desktop',
-      value: 63,
+      title: 'Ongoing',
+      value: 15,
       icon: LaptopMacIcon,
       color: colors.indigo[500]
     },
     {
-      title: 'Tablet',
-      value: 15,
+      title: 'Accomplished',
+      value: 27,
       icon: TabletIcon,
       color: colors.red[600]
     },
     {
-      title: 'Mobile',
-      value: 23,
+      title: 'In the list',
+      value: 58,
       icon: PhoneIcon,
       color: colors.orange[600]
     }
@@ -78,7 +78,7 @@ const TrafficByDevice = (props) => {
 
   return (
     <Card {...props}>
-      <CardHeader title="Traffic by Device" />
+      <CardHeader title="Goals for this year" />
       <Divider />
       <CardContent>
         <Box
@@ -101,7 +101,6 @@ const TrafficByDevice = (props) => {
         >
           {devices.map(({
             color,
-            icon: Icon,
             title,
             value
           }) => (
@@ -112,7 +111,6 @@ const TrafficByDevice = (props) => {
                 textAlign: 'center'
               }}
             >
-              <Icon color="action" />
               <Typography
                 color="textPrimary"
                 variant="body1"
