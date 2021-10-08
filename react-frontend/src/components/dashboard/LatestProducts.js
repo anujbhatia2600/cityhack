@@ -33,18 +33,18 @@ const products = [
     imageUrl: '/static/images/products/product_3.jpeg',
     updatedAt: 'wheat'
   },
-  // {
-  //   id: uuid(),
-  //   name: 'Fibres',
-  //   imageUrl: '/static/images/products/product_4.png',
-  //   updatedAt: ''
-  // },
-  // {
-  //   id: uuid(),
-  //   name: 'Nuts',
-  //   imageUrl: '/static/images/products/product_5.png',
-  //   updatedAt: ''
-  // }
+  {
+    id: uuid(),
+    name: 'Livestock',
+    imageUrl: '/static/images/products/product_4.jpeg',
+    updatedAt: 'Cattle, sheep'
+  },
+  {
+    id: uuid(),
+    name: 'Nuts',
+    imageUrl: '/static/images/products/product_5.jpeg',
+    updatedAt: 'Almonds'
+  }
 ];
 
 const LatestProducts = (props) => (

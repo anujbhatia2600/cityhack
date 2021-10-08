@@ -2,7 +2,6 @@ import { Navigate } from 'react-router-dom';
 import DashboardLayout from './components/DashboardLayout';
 import MainLayout from './components/MainLayout';
 import Account from './pages/Account';
-import CustomerList from './pages/CustomerList';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
@@ -12,6 +11,7 @@ import Settings from './pages/Settings';
 import Inbox from './pages/Inbox';
 import Kanban from './pages/Kanban';
 import Network from './pages/Network';
+import TextConverter from './pages/TextConverter';
 
 const routes = [
   {
@@ -19,13 +19,13 @@ const routes = [
     element: <DashboardLayout />,
     children: [
       { path: 'account', element: <Account /> },
-      { path: 'customers', element: <CustomerList /> },
       { path: 'network', element: <Network /> },
       { path: 'dashboard', element: <Dashboard /> },
       { path: 'kanban', element: <Kanban/>},
       { path: 'products', element: <ProductList /> },
       { path: 'settings', element: <Settings /> },
       { path: 'inbox', element: <Inbox /> },
+      { path: 'text-converter', element: <TextConverter/>},
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },

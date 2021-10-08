@@ -18,6 +18,16 @@ const Sales = (props) => {
   const data = {
     datasets: [
       {
+        backgroundColor: colors.grey[400],
+        barPercentage: 0.5,
+        barThickness: 12,
+        borderRadius: 4,
+        categoryPercentage: 0.5,
+        data: [2, 2, 3, 2, 3, 3, 2, 2],
+        label: 'Last year',
+        maxBarThickness: 10
+      },
+      {
         backgroundColor: colors.indigo[500],
         barPercentage: 0.5,
         barThickness: 12,
@@ -26,19 +36,9 @@ const Sales = (props) => {
         data: [2, 3, 5, 2, 4, 3, 3, 2],
         label: 'This year',
         maxBarThickness: 10
-      },
-      {
-        backgroundColor: colors.grey[200],
-        barPercentage: 0.5,
-        barThickness: 12,
-        borderRadius: 4,
-        categoryPercentage: 0.5,
-        data: [2, 2, 3, 2, 3, 3, 2, 2],
-        label: 'Last year',
-        maxBarThickness: 10
       }
     ],
-    labels: ['Representativity', 'Participation', 'Accounttability', 'Inclusiveness', 'Professionalism', 'Finance', 'Networking', 'Marketing']
+    labels: ['Representativity', 'Participation', 'Accountability', 'Inclusiveness', 'Professionalism', 'Finance', 'Networking', 'Marketing']
   };
 
   const options = {

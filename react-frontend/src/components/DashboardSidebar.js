@@ -22,7 +22,8 @@ import {
   Users as UsersIcon,
   Inbox as InboxIcon,
   DollarSign as DollarIcon,
-  List as ListIcon
+  List as ListIcon,
+  Type as TypeIcon
 } from 'react-feather';
 import NavItem from './NavItem';
 
@@ -44,11 +45,6 @@ const items = [
     title : "My Kanban"
   },
   {
-    href: '/app/customers',
-    icon: UsersIcon,
-    title: 'Customers'
-  },
-  {
     href: '/app/network',
     icon: UsersIcon,
     title: 'My Network'
@@ -59,15 +55,15 @@ const items = [
     title: 'Government Funds'
   },
   {
+    href: '/app/text-converter',
+    icon : TypeIcon,
+    title : 'Convert Text Data'
+  },
+  {
     href: '/app/inbox',
     icon: InboxIcon,
     title: 'Inbox',
   },
-  // {
-  //   href: '/app/account',
-  //   icon: UserIcon,
-  //   title: 'Account'
-  // },
   {
     href: '/app/settings',
     icon: SettingsIcon,
