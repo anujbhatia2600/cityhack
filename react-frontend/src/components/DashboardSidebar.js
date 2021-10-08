@@ -38,6 +38,11 @@ const items = [
   {
     href: '/app/customers',
     icon: UsersIcon,
+    title: 'Customers'
+  },
+  {
+    href: '/app/network',
+    icon: UsersIcon,
     title: 'My Network'
   },
   {
