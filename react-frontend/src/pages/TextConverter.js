@@ -33,12 +33,15 @@ const TextConverter = () => {
         <Helmet>
           <title>Text Converter</title>
         </Helmet>
-        {(!file)?<FileUploader 
-                style={{height:"200px"}}
-                handleChange={handleChange} 
-                name="file" 
-                types={fileTypes} 
-            />:
+        {(!file)?
+        <Box marginTop="300px" marginLeft="400px">
+          <FileUploader 
+            style={{height:"200px"}}
+            handleChange={handleChange} 
+            name="file" 
+            types={fileTypes} 
+          />
+        </Box>:
         <Grid container spacing={10}>
             <Grid item md={6} height="100%">
             <img style = {{width:'100%', marginTop:'200px', marginLeft:'30px'}}src={URL.createObjectURL(file)}/>
