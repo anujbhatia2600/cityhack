@@ -8,8 +8,9 @@ import {
   Grid,
   Typography
 } from '@material-ui/core';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import GetAppIcon from '@material-ui/icons/GetApp';
+import {
+  User as UserIcon,
+} from 'react-feather';
 
 const ProductCard = ({ product, ...rest }) => (
   <Card
@@ -65,14 +66,13 @@ const ProductCard = ({ product, ...rest }) => (
             display: 'flex'
           }}
         >
-          <AccessTimeIcon color="action" />
           <Typography
             color="textSecondary"
             display="inline"
             sx={{ pl: 1 }}
             variant="body2"
           >
-            Updated 2hr ago
+            {product.tags}
           </Typography>
         </Grid>
         <Grid
@@ -82,7 +82,7 @@ const ProductCard = ({ product, ...rest }) => (
             display: 'flex'
           }}
         >
-          <GetAppIcon color="action" />
+          <UserIcon size="20" variant="square" color="blue" />
           <Typography
             color="textSecondary"
             display="inline"
@@ -90,8 +90,6 @@ const ProductCard = ({ product, ...rest }) => (
             variant="body2"
           >
             {product.totalDownloads}
-            {' '}
-            Downloads
           </Typography>
         </Grid>
       </Grid>
