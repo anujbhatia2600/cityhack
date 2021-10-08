@@ -39,7 +39,7 @@ const InboxCard = ({ message, ...rest }) => (
           gutterBottom
           variant="h5"
           style={{
-            'margin-left': '8px'
+            'marginLeft': '8px'
           }}
         >
           {message.senderName}
