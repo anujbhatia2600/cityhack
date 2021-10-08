@@ -20,7 +20,7 @@ import {
 import { FileUploader } from 'react-drag-drop-files';
 import BasicModal from '../components/Modal';
 
-const fileTypes = ["JPG", "PNG", "GIF", "PDF", "JPEG"];
+const fileTypes = ["PDF", "DOC", "JPEG", "PNG"];
 
 const TextConverter = () => {
     const [file, setFile] = useState(null);
