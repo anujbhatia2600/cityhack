@@ -4,7 +4,6 @@ import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import Logo from '../components/Logo';
 import {
   Box,
   Button,
@@ -14,6 +13,7 @@ import {
   TextField,
   Typography
 } from '@material-ui/core';
+import Logo from '../components/Logo';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -33,36 +33,40 @@ const LandingPage = () => {
         }}
       >
         <Container maxWidth="sm">
-            <Logo src="/static/AsiaDhraaLogo.png" height="80px" style={{
-                display: 'block',
-                margin: '0 auto',
-                marginBottom: 40,
-                backgroundColor: 'green',
-                borderRadius: 15,
-            }}/>
-            <Button
-                color="primary"
+          <Logo
+            src="/static/AsiaDhraaLogo.png"
+            height="80px"
+            style={{
+              display: 'block',
+              margin: '0 auto',
+              marginBottom: 40,
+              backgroundColor: 'green',
+              borderRadius: 15,
+            }}
+          />
+          <Button
+            color="primary"
                 // disabled={isSubmitting}
-                fullWidth
-                size="large"
-                type="submit"
-                variant="contained"
-                style = {{ marginBottom : 15 }}
-                href="/login"
-                >
-                Login
-            </Button>
-            <Button
-                color="primary"
+            fullWidth
+            size="large"
+            type="submit"
+            variant="contained"
+            style={{ marginBottom: 15 }}
+            href="/login"
+          >
+            Login
+          </Button>
+          <Button
+            color="primary"
                 // disabled={isSubmitting}
-                fullWidth
-                size="large"
-                type="submit"
-                variant="contained"
-                href="/register"
-                >
-                Register
-            </Button>
+            fullWidth
+            size="large"
+            type="submit"
+            variant="contained"
+            href="/register"
+          >
+            Register
+          </Button>
         </Container>
       </Box>
     </>

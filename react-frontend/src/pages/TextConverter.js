@@ -18,6 +18,7 @@ import {
   Grid
 } from '@material-ui/core';
 import { FileUploader } from 'react-drag-drop-files';
+import BasicModal from '../components/Modal';
 
 const fileTypes = ["JPG", "PNG", "GIF", "PDF", "JPEG"];
 
@@ -32,306 +33,366 @@ const TextConverter = () => {
         <Helmet>
           <title>Text Converter</title>
         </Helmet>
-        <Grid container spacing={10}>
-            <Grid item md={6} height="100%">
-            {(!file)?<FileUploader 
+        {(!file)?<FileUploader 
                 style={{height:"200px"}}
                 handleChange={handleChange} 
                 name="file" 
                 types={fileTypes} 
-            />:<img style = {{width:'100%', marginTop:'200px', marginLeft:'30px'}}src={URL.createObjectURL(file)}/>}
+            />:
+        <Grid container spacing={10}>
+            <Grid item md={6} height="100%">
+            <img style = {{width:'100%', marginTop:'200px', marginLeft:'30px'}}src={URL.createObjectURL(file)}/>
             </Grid>
             <Grid item md={6}>
-            {(file) && <Box
+            <Box
                 sx={{
                     backgroundColor: 'background.default',
                     display: 'flex',
                     flexDirection: 'column',
                     height: '100%',
                     justifyContent: 'center'
+            }}
+            >
+            <Container maxWidth="sm" style={{ overflow: 'auto' }}>
+              <Formik
+                initialValues={{
+                  email: 'banasifarmers@gmail.com',
+                  orgName: 'Banasi Formers Association',
+                  socMed: 'N/A',
+                  country: 'Philippines',
+                  address: '11 Victoneta Avenue, Malabon',
+                  association: true,
+                  NGO: false,
+                  foundation: false,
+                  networkNGO: false,
+                  contactNumber: '+63 2234567',
+                  web: 'banasifarmers.ph',
+                  dateFounded: '02.10.2017',
+                  member: '15.06.2019',
+                  orgStrength: false,
+                  par: false,
+                  instiLink: true,
+                  agriProduct: true,
                 }}
-                >
-                <Container maxWidth="sm" style={{ overflow: 'auto' }}>
-                    <Formik
-                    initialValues={{
-                        email: '',
-                        orgName: '',
-                        socMed: '',
-                        password: '',
-                        country: '',
-                        address: '',
-                        association: false,
-                        NGO: false,
-                        foundation: false,
-                        networkNGO: false,
-                        gender: '',
-                        contactPerson: '',
-                        contactPersonPosition: '',
-                    }}
-                    validationSchema={
-                    Yup.object().shape({
-                        email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-                        orgName: Yup.string().max(255).required('Organization name is required'),
-                        password: Yup.string().max(255).required('password is required'),
-                        policy: Yup.boolean().oneOf([true], 'This field must be checked'),
-                        country: Yup.string().max(255).required('Country is required'),
-                        address: Yup.string().max(255).required('address is required'),
-                        gender: Yup.string().max(255).required('gender is required'),
-                        contactPerson: Yup.string().max(255).required('Contact Person is required'),
-                        contactPersonPosition: Yup.string().max(255).required('Required'),
-                    })
-                    }
-                    onSubmit={(values) => {
-                        console.log(values);
-                        navigate('/app/dashboard', { replace: true });
-                    }}
+                validationSchema={
+            Yup.object().shape({
+              email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
+              orgName: Yup.string().max(255).required('Organization name is required'),
+              country: Yup.string().max(255).required('Country is required'),
+              address: Yup.string().max(255).required('address is required'),
+            })
+          }
+                onSubmit={(values) => {
+                  console.log(values);
+                  navigate('/app/dashboard', { replace: true });
+                }}
+              >
+                {({
+                  errors,
+                  handleBlur,
+                  handleChange,
+                  handleSubmit,
+                  isSubmitting,
+                  touched,
+                  values
+                }) => (
+                  <form onSubmit={handleSubmit}>
+                    <Box sx={{ mb: 3 }}>
+                      <Typography
+                        color="textPrimary"
+                        variant="h2"
+                        gutterBottom
+                      >
+                        Confirm details
+                      </Typography>
+                      <Typography
+                        color="textSecondary"
+                        variant="body2"
+                      >
+                        Double check if there is any error in the conversion
+                      </Typography>
+                    </Box>
+                    <Typography
+                      color="textPrimary"
+                      variant="h4"
+                      gutterBottom
                     >
-                    {({
-                        errors,
-                        handleBlur,
-                        handleChange,
-                        handleSubmit,
-                        isSubmitting,
-                        touched,
-                        values
-                    }) => (
-                        <form onSubmit={handleSubmit}>
-                        <Box sx={{ mb: 3 }}>
-                            <Typography
-                            color="textPrimary"
-                            variant="h2"
-                            gutterBottom
-                            >
-                            Confirm details
-                            </Typography>
-                            <Typography
-                            color="textSecondary"
-                            variant="body2"
-                            >
-                            Double check if there is any error in the conversion
-                            </Typography>
-                        </Box>
-                        <TextField
-                            error={Boolean(touched.orgName && errors.orgName)}
-                            fullWidth
-                            helperText={touched.orgName && errors.orgName}
-                            label="Name of the organization"
-                            margin="normal"
-                            name="orgName"
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            value={values.orgName}
-                            variant="outlined"
-                        />
-                        <Typography
-                            color="textPrimary"
-                            variant="h4"
-                            gutterBottom
-                        >
-                            Website
-                        </Typography>
-                        <TextField
-                            error={Boolean(touched.socMed && errors.socMed)}
-                            fullWidth
-                            helperText={touched.socMed && errors.socMed}
-                            label="Social media website"
-                            margin="normal"
-                            name="socMed"
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            value={values.socMed}
-                            variant="outlined"
-                        />
-                        <Typography
-                            color="textPrimary"
-                            variant="h4"
-                            gutterBottom
-                        >
-                            Legal Form
-                        </Typography>
-                        <Box
-                            sx={{
-                            alignItems: 'center',
-                            display: 'flex',
-                            ml: -1
-                            }}
-                        >
-                            <Checkbox
-                            checked={values.association}
-                            name="association"
-                            onChange={handleChange}
-                            />
-                            <Typography
-                            color="textSecondary"
-                            variant="body1"
-                            >
-                            Association
-                            </Typography>
-                            <Checkbox
-                            checked={values.NGO}
-                            name="NGO"
-                            onChange={handleChange}
-                            />
-                            <Typography
-                            color="textSecondary"
-                            variant="body1"
-                            >
-                            NGO
-                            </Typography>
-                            <Checkbox
-                            checked={values.foundation}
-                            name="foundation"
-                            onChange={handleChange}
-                            />
-                            <Typography
-                            color="textSecondary"
-                            variant="body1"
-                            >
-                            Foundation
-                            </Typography>
-                            <Checkbox 
-                                checked={values.networkNGO}
-                                name="networkNGO"
-                                onChange={handleChange}
-                            />
-                            <Typography
-                            color="textSecondary"
-                            variant="body1"
-                            >
-                            Network of NGOs
-                            </Typography>
-                        </Box>
-                        <TextField
-                            error={Boolean(touched.email && errors.email)}
-                            fullWidth
-                            helperText={touched.email && errors.email}
-                            label="Email Address"
-                            margin="normal"
-                            name="email"
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            type="email"
-                            value={values.email}
-                            variant="outlined"
-                        />
-                        <TextField
-                            error={Boolean(touched.password && errors.password)}
-                            fullWidth
-                            helperText={touched.password && errors.password}
-                            label="Password"
-                            margin="normal"
-                            name="password"
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            type="password"
-                            value={values.password}
-                            variant="outlined"
-                        />
-                        <TextField
-                            error={Boolean(touched.country && errors.country)}
-                            fullWidth
-                            helperText={touched.country && errors.country}
-                            label="Country"
-                            margin="normal"
-                            name="country"
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            value={values.country}
-                            variant="outlined"
-                        />
-                        <TextField
-                            error={Boolean(touched.address && errors.address)}
-                            fullWidth
-                            helperText={touched.address && errors.address}
-                            label="Address"
-                            margin="normal"
-                            name="address"
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            value={values.address}
-                            variant="outlined"
-                        />
-                        <Typography
-                            color="textPrimary"
-                            variant="h4"
-                        >
-                            Contact Person
-                        </Typography>
-                        <TextField
-                            error={Boolean(touched.contactPerson && errors.contactPerson)}
-                            fullWidth
-                            helperText={touched.contactPerson && errors.contactPerson}
-                            label="Contact Person Name"
-                            margin="normal"
-                            name="contactPerson"
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            value={values.contactPerson}
-                            variant="outlined"
-                        />
-                        <Select
-                            error={Boolean(touched.gender && errors.gender)}
-                            fullWidth
-                            helperText={touched.gender && errors.gender}
-                            label="Gender"
-                            name="gender"
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            value={values.gender}
-                            variant="outlined"
-                        >
-                            <MenuItem value={10}>Male</MenuItem>
-                            <MenuItem value={20}>Female</MenuItem>
-                            <MenuItem value={30}>Prefer not to say</MenuItem>
-                        </Select>
-                        <TextField
-                            error={Boolean(touched.contactPersonPosition && errors.contactPersonPosition)}
-                            fullWidth
-                            helperText={touched.contactPersonPosition && errors.contactPersonPosition}
-                            label="Contact Person Position"
-                            margin="normal"
-                            name="contactPersonPosition"
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            value={values.contactPersonPosition}
-                            variant="outlined"
-                        />
-        
-                        <Box
-                            sx={{
-                            alignItems: 'center',
-                            display: 'flex',
-                            ml: -1
-                            }}
-                        >
-                        </Box>
-                        {Boolean(touched.policy && errors.policy) && (
-                        <FormHelperText error>
-                            {errors.policy}
-                        </FormHelperText>
-                        )}
-                        <Box sx={{ py: 2 }}>
-                            <Button
-                            color="primary"
-                            disabled={isSubmitting}
-                            fullWidth
-                            size="large"
-                            type="submit"
-                            variant="contained"
-                            >
-                            Confirm information
-                            </Button>
-                        </Box>
-                        </form>
+                      Organization
+                    </Typography>
+                    <TextField
+                      error={Boolean(touched.orgName && errors.orgName)}
+                      fullWidth
+                      helperText={touched.orgName && errors.orgName}
+                      label="Name of the organization"
+                      margin="normal"
+                      name="orgName"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.orgName}
+                      variant="outlined"
+                    />
+                    <Typography
+                      color="textPrimary"
+                      variant="h4"
+                      gutterBottom
+                    >
+                      Country
+                    </Typography>
+                    <TextField
+                      error={Boolean(touched.country && errors.country)}
+                      fullWidth
+                      helperText={touched.country && errors.country}
+                      label="Country"
+                      margin="normal"
+                      name="country"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.country}
+                      variant="outlined"
+                    />
+                    <Typography
+                      color="textPrimary"
+                      variant="h4"
+                      gutterBottom
+                    >
+                      Main Office Address
+                    </Typography>
+                    <TextField
+                      error={Boolean(touched.address && errors.address)}
+                      fullWidth
+                      helperText={touched.address && errors.address}
+                      label="Address"
+                      margin="normal"
+                      name="address"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.address}
+                      variant="outlined"
+                    />
+                    <Typography
+                      color="textPrimary"
+                      variant="h4"
+                    >
+                      Contacts
+                    </Typography>
+                    <TextField
+                      error={Boolean(touched.contactNumber && errors.contactNumber)}
+                      fullWidth
+                      helperText={touched.contactNumber && errors.contactNumber}
+                      label="Contact Number"
+                      margin="normal"
+                      name="contactNumber"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.contactNumber}
+                      variant="outlined"
+                    />
+                    <TextField
+                      error={Boolean(touched.email && errors.email)}
+                      fullWidth
+                      helperText={touched.email && errors.email}
+                      label="Email Address"
+                      margin="normal"
+                      name="email"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      type="email"
+                      value={values.email}
+                      variant="outlined"
+                    />
+                    <TextField
+                      error={Boolean(touched.web && errors.web)}
+                      fullWidth
+                      helperText={touched.web && errors.web}
+                      label="Website URL"
+                      margin="normal"
+                      name="web"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.web}
+                      variant="outlined"
+                    />
+                    <TextField
+                      error={Boolean(touched.socMed && errors.socMed)}
+                      fullWidth
+                      helperText={touched.socMed && errors.socMed}
+                      label="Social media URL"
+                      margin="normal"
+                      name="socMed"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.socMed}
+                      variant="outlined"
+                    />
+                    <Typography
+                      color="textPrimary"
+                      variant="h4"
+                      gutterBottom
+                    >
+                      Legal Form
+                    </Typography>
+                    <Box
+                      sx={{
+                        alignItems: 'center',
+                        display: 'flex',
+                        ml: -1
+                      }}
+                    >
+                      <Checkbox
+                        checked={values.association}
+                        name="association"
+                        onChange={handleChange}
+                      />
+                      <Typography
+                        color="textSecondary"
+                        variant="body1"
+                      >
+                        Association
+                      </Typography>
+                      <Checkbox
+                        checked={values.NGO}
+                        name="NGO"
+                        onChange={handleChange}
+                      />
+                      <Typography
+                        color="textSecondary"
+                        variant="body1"
+                      >
+                        NGO
+                      </Typography>
+                      <Checkbox
+                        checked={values.foundation}
+                        name="foundation"
+                        onChange={handleChange}
+                      />
+                      <Typography
+                        color="textSecondary"
+                        variant="body1"
+                      >
+                        Foundation
+                      </Typography>
+                      <Checkbox
+                        checked={values.networkNGO}
+                        name="networkNGO"
+                        onChange={handleChange}
+                      />
+                      <Typography
+                        color="textSecondary"
+                        variant="body1"
+                      >
+                        Network of NGOs
+                      </Typography>
+                    </Box>
+
+                    <Typography
+                      color="textPrimary"
+                      variant="h4"
+                      gutterBottom
+                    >
+                      Key Figures
+                    </Typography>
+                    <TextField
+                      error={Boolean(touched.dateFounded && errors.dateFounded)}
+                      fullWidth
+                      helperText={touched.dateFounded && errors.dateFounded}
+                      label="Date Founded"
+                      margin="normal"
+                      name="dateFounded"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.dateFounded}
+                      variant="outlined"
+                    />
+                    <TextField
+                      error={Boolean(touched.member && errors.member)}
+                      fullWidth
+                      helperText={touched.member && errors.member}
+                      label="Member of AsiaDHRAA since"
+                      margin="normal"
+                      name="member"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.member}
+                      variant="outlined"
+                    />
+
+                    <Box
+                      sx={{
+                        alignItems: 'center',
+                        display: 'flex',
+                        ml: -1
+                      }}
+                    >
+                      <Checkbox
+                        checked={values.orgStrength}
+                        name="Organizational Strengthening"
+                        onChange={handleChange}
+                      />
+                      <Typography
+                        color="textSecondary"
+                        variant="body1"
+                      >
+                        Organizational Strengthening
+                      </Typography>
+                      <Checkbox
+                        checked={values.par}
+                        name="par"
+                        onChange={handleChange}
+                      />
+                      <Typography
+                        color="textSecondary"
+                        variant="body1"
+                      >
+                        Policy, Advocacy, Research
+                      </Typography>
+                      <Checkbox
+                        checked={values.instiLink}
+                        name="instiLink"
+                        onChange={handleChange}
+                      />
+                      <Typography
+                        color="textSecondary"
+                        variant="body1"
+                      >
+                        Institutional Linkage
+                      </Typography>
+                      <Checkbox
+                        checked={values.agriProduct}
+                        name="agriProduct"
+                        onChange={handleChange}
+                      />
+                      <Typography
+                        color="textSecondary"
+                        variant="body1"
+                      >
+                        Agricultural Production
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{
+                        alignItems: 'center',
+                        display: 'flex',
+                        ml: -1
+                      }}
+                    />
+                    {Boolean(touched.policy && errors.policy) && (
+                    <FormHelperText error>
+                      {errors.policy}
+                    </FormHelperText>
                     )}
-                    </Formik>
-                </Container>
-                </Box>}
-            </Grid>
+                    <Box sx={{ py: 2 }}>
+                      <BasicModal />
+                    </Box>
+                  </form>
+                )}
+              </Formik>
+            </Container>
+          </Box>
         </Grid>
-        
-      </>
-    )
-}
+      </Grid>}
+
+    </>
+  );
+};
 
 export default TextConverter;
