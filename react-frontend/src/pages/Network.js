@@ -10,9 +10,11 @@ import TotalProfit from '../components/dashboard/TotalProfit';
 import TrafficByDevice from '../components/dashboard/TrafficByDevice';
 import MiniDashboard from 'src/components/MiniDashboard';
 import { Typography } from '@material-ui/core';
+import NetworkListToolbar from '../components/dashboard/NetworkListToolbar'
 
 const Network = () => (
   <>
+    <Container maxWidth={false}><NetworkListToolbar /></Container>
     <Box
       sx={{
         backgroundColor: 'background.default',
@@ -40,7 +42,7 @@ const Network = () => (
                 md={6}
                 xs={12}
             >
-                <MiniDashboard name="RPO #1" location="City #1, Country #1"/>
+                <MiniDashboard name="Ilocos Association of Farmers" location=" Pangasinan,  The Philippines"/>
             </Grid>
             <Grid
                 item
@@ -48,7 +50,7 @@ const Network = () => (
                 md={6}
                 xs={12}
             >
-                <MiniDashboard name="RPO #2" location="City #2, Country #2"/>
+                <MiniDashboard name="Cordillera Agricultural Organization" location="Benguet, The Philippines"/>
             </Grid>
             <Grid
                 item
@@ -56,7 +58,7 @@ const Network = () => (
                 md={6}
                 xs={12}
             >
-                <MiniDashboard name="RPO #3" location="City #3, Country #3"/>
+                <MiniDashboard name="Cagayan Farmers' Union" location="Santiago, The Philippines"/>
             </Grid>
             <Grid
                 item
@@ -64,7 +66,7 @@ const Network = () => (
                 md={6}
                 xs={12}
             >
-                <MiniDashboard name="RPO #4" location="City #4, Country #4"/>
+                <MiniDashboard name="Central Luzon Farmers" location="Bulacan, The Philippines"/>
             </Grid>
             <Grid
                 item
@@ -72,7 +74,7 @@ const Network = () => (
                 md={6}
                 xs={12}
             >
-                <MiniDashboard name="RPO #5" location="City #5, Country #5"/>
+                <MiniDashboard name="Caraga's Association of Agriculture" location="Butuan, The Philippines"/>
             </Grid>
             <Grid
                 item
@@ -80,7 +82,7 @@ const Network = () => (
                 md={6}
                 xs={12}
             >
-                <MiniDashboard name="RPO #6" location="City #6, Country #6"/>
+                <MiniDashboard name="Bicol Farmers' Organization" location="Legazpi City, The Philippines"/>
             </Grid>
             </Grid>
         </Container>
@@ -105,7 +107,7 @@ const Network = () => (
                 md={6}
                 xs={12}
             >
-                <MiniDashboard name="Investor #7" location="City #7, Country #7"/>
+                <MiniDashboard name="Banana" location="City #7, The Philippines" investors="true"/>
             </Grid>
             <Grid
                 item
@@ -113,7 +115,7 @@ const Network = () => (
                 md={6}
                 xs={12}
             >
-                <MiniDashboard name="Investor #8" location="City #8, Country #8"/>
+                <MiniDashboard name="JP Morgan & Chase Co" location="City #8, The Philippines"  investors="true"/>
             </Grid>
             <Grid
                 item
@@ -121,7 +123,7 @@ const Network = () => (
                 md={6}
                 xs={12}
             >
-                <MiniDashboard name="Investor #9" location="City #9, Country #9"/>
+                <MiniDashboard name="Salikneta Farm" location="City #9, The Philippines"  investors="true"/>
             </Grid>
             <Grid
                 item
@@ -129,7 +131,7 @@ const Network = () => (
                 md={6}
                 xs={12}
             >
-                <MiniDashboard name="Investor #10" location="City #10, Country #10"/>
+                <MiniDashboard name="Coca Cola" location="City #10, The Philippines"  investors="true"/>
             </Grid>
             <Grid
                 item
@@ -137,7 +139,7 @@ const Network = () => (
                 md={6}
                 xs={12}
             >
-                <MiniDashboard name="Investor #11" location="City #11, Country #11"/>
+                <MiniDashboard name="Boeing" location="City #11, The Philippines" investors="true"/>
             </Grid>
             <Grid
                 item
@@ -145,7 +147,7 @@ const Network = () => (
                 md={6}
                 xs={12}
             >
-                <MiniDashboard name="Investor #12" location="City #12, Country #12"/>
+                <MiniDashboard name="BMW" location="City #12, The Philippines" investors="true"/>
             </Grid>
             </Grid>
         </Container>

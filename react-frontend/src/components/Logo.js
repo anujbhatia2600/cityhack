@@ -1,8 +1,8 @@
 const Logo = (props) => (
   <img
     alt="Logo"
-    src="/static/AsiaDhraaLogo.png"
-    height="40px"
+    src={!props.src ? "/static/AsiaDhraaLogo.png" : props.src}
+    height={!props.height ? "40px" : props.height}
     {...props}
   />
 );

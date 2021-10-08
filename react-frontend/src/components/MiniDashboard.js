@@ -20,6 +20,13 @@ import {
         }}
     >
       <CardContent>
+      <Avatar
+          align="center"
+          alt="Product"
+          src= {!props.investors ? "/static/rand.png" : "/static/investor.jpg"}
+          variant="square"
+          sx={{ width: 100, height: 80}}
+      />
       <Typography
         noWrap="true"
         align="left"
