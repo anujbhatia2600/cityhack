@@ -21,6 +21,8 @@ import {
   UserPlus as UserPlusIcon,
   Users as UsersIcon,
   Inbox as InboxIcon,
+  DollarSign as DollarIcon,
+  List as ListIcon
 } from 'react-feather';
 import NavItem from './NavItem';
 
@@ -37,13 +39,23 @@ const items = [
     title: 'My RPO'
   },
   {
+    href: '/app/kanban',
+    icon : ListIcon,
+    title : "My Kanban"
+  },
+  {
     href: '/app/customers',
+    icon: UsersIcon,
+    title: 'Customers'
+  },
+  {
+    href: '/app/network',
     icon: UsersIcon,
     title: 'My Network'
   },
   {
     href: '/app/products',
-    icon: ShoppingBagIcon,
+    icon: DollarIcon,
     title: 'Government Funds'
   },
   {
