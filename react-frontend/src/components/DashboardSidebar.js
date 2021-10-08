@@ -44,11 +44,6 @@ const items = [
     title : "My Kanban"
   },
   {
-    href: '/app/customers',
-    icon: UsersIcon,
-    title: 'Customers'
-  },
-  {
     href: '/app/network',
     icon: UsersIcon,
     title: 'My Network'
