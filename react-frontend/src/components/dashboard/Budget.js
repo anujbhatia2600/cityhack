@@ -7,7 +7,7 @@ import {
   Typography
 } from '@material-ui/core';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import MoneyIcon from '@material-ui/icons/Money';
+import NaturePeopleIcon from '@material-ui/icons/NaturePeople';
 import { red } from '@material-ui/core/colors';
 
 const Budget = (props) => (
@@ -44,7 +44,7 @@ const Budget = (props) => (
               width: 56
             }}
           >
-            <MoneyIcon />
+            <NaturePeopleIcon />
           </Avatar>
         </Grid>
       </Grid>
