@@ -4,6 +4,7 @@ import { ThemeProvider, StyledEngineProvider } from '@material-ui/core';
 import GlobalStyles from './components/GlobalStyles';
 import theme from './theme';
 import routes from './routes';
+import './styles.css';
 
 const App = () => {
   const content = useRoutes(routes);
