@@ -24,13 +24,13 @@ const TotalCustomers = (props) => (
             gutterBottom
             variant="h6"
           >
-            TOTAL CUSTOMERS
+            Current members
           </Typography>
           <Typography
             color="textPrimary"
             variant="h3"
           >
-            1,600
+            324
           </Typography>
         </Grid>
         <Grid item>
@@ -66,7 +66,7 @@ const TotalCustomers = (props) => (
           color="textSecondary"
           variant="caption"
         >
-          Since last month
+          Since last year
         </Typography>
       </Box>
     </CardContent>

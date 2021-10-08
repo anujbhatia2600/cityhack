@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 import { Search as SearchIcon } from 'react-feather';
 
-const InboxListToolbar = (props) => (
+const InboxListToolbar = ({ search, setSearch, ...props }) => (
   <Box {...props}>
     <Box
       sx={{
@@ -44,6 +44,8 @@ const InboxListToolbar = (props) => (
               }}
               placeholder="Search message"
               variant="outlined"
+              value={search}
+              onChange={(event)=>{setSearch(event.target.value);}}
             />
           </Box>
         </CardContent>

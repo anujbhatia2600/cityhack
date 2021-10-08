@@ -23,7 +23,7 @@ const Sales = (props) => {
         barThickness: 12,
         borderRadius: 4,
         categoryPercentage: 0.5,
-        data: [18, 5, 19, 27, 29, 19, 20],
+        data: [2, 3, 5, 2, 4, 3, 3, 2],
         label: 'This year',
         maxBarThickness: 10
       },
@@ -33,12 +33,12 @@ const Sales = (props) => {
         barThickness: 12,
         borderRadius: 4,
         categoryPercentage: 0.5,
-        data: [11, 20, 12, 29, 30, 25, 13],
+        data: [2, 2, 3, 2, 3, 3, 2, 2],
         label: 'Last year',
         maxBarThickness: 10
       }
     ],
-    labels: ['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug', '6 Aug']
+    labels: ['Representativity', 'Participation', 'Accounttability', 'Inclusiveness', 'Professionalism', 'Finance', 'Networking', 'Marketing']
   };
 
   const options = {
@@ -101,10 +101,10 @@ const Sales = (props) => {
             size="small"
             variant="text"
           >
-            Last 7 days
+            Last 2 years
           </Button>
         )}
-        title="Latest Sales"
+        title="Growth Monitoring"
       />
       <Divider />
       <CardContent>

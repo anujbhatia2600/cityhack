@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet';
+import { useState } from 'react';
 import {
   Box,
   Container,
@@ -12,7 +13,13 @@ import InboxListToolbar from 'src/components/inbox/InboxListToolbar';
 import products from '../__mocks__/products';
 import messages from '../__mocks__/messages';
 
-const Inbox = () => (
+
+
+const Inbox = () => {
+    const [search, setSearch] = useState('');
+
+
+    return (
   <>
     <Helmet>
       <title>Inbox</title>
@@ -25,13 +32,13 @@ const Inbox = () => (
       }}
     >
       <Container maxWidth={false}>
-        <InboxListToolbar />
+        <InboxListToolbar search={search} setSearch={setSearch} />
         <Box sx={{ pt: 3 }}>
           <Grid
             container
             spacing={3}
           >
-            {messages.map((message) => (
+            {messages.filter((x)=>x.title.includes(search)).map((message) => (
               <Grid
                 item
                 key={message.id}
@@ -60,6 +67,6 @@ const Inbox = () => (
       </Container>
     </Box>
   </>
-);
+)};
 
 export default Inbox;

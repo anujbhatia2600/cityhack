@@ -1,5 +1,4 @@
 import { v4 as uuid } from 'uuid';
-import moment from 'moment';
 import {
   Box,
   Button,
@@ -18,33 +17,33 @@ import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 const products = [
   {
     id: uuid(),
-    name: 'Dropbox',
-    imageUrl: '/static/images/products/product_1.png',
-    updatedAt: moment().subtract(2, 'hours')
+    name: 'Fruits',
+    imageUrl: '/static/images/products/product_1.jpeg',
+    updatedAt: 'Calamansi'
   },
   {
     id: uuid(),
-    name: 'Medium Corporation',
-    imageUrl: '/static/images/products/product_2.png',
-    updatedAt: moment().subtract(2, 'hours')
+    name: 'Vegetables',
+    imageUrl: '/static/images/products/product_2.jpeg',
+    updatedAt: 'Potatoes, carrots'
   },
   {
     id: uuid(),
-    name: 'Slack',
-    imageUrl: '/static/images/products/product_3.png',
-    updatedAt: moment().subtract(3, 'hours')
+    name: 'Cereals',
+    imageUrl: '/static/images/products/product_3.jpeg',
+    updatedAt: 'wheat'
   },
   {
     id: uuid(),
-    name: 'Lyft',
-    imageUrl: '/static/images/products/product_4.png',
-    updatedAt: moment().subtract(5, 'hours')
+    name: 'Livestock',
+    imageUrl: '/static/images/products/product_4.jpeg',
+    updatedAt: 'Cattle, sheep'
   },
   {
     id: uuid(),
-    name: 'GitHub',
-    imageUrl: '/static/images/products/product_5.png',
-    updatedAt: moment().subtract(9, 'hours')
+    name: 'Nuts',
+    imageUrl: '/static/images/products/product_5.jpeg',
+    updatedAt: 'Almonds'
   }
 ];
 
@@ -52,7 +51,7 @@ const LatestProducts = (props) => (
   <Card {...props}>
     <CardHeader
       subtitle={`${products.length} in total`}
-      title="Latest Products"
+      title="Focused Commondity"
     />
     <Divider />
     <List>
@@ -73,7 +72,7 @@ const LatestProducts = (props) => (
           </ListItemAvatar>
           <ListItemText
             primary={product.name}
-            secondary={`Updated ${product.updatedAt.fromNow()}`}
+            secondary={`${product.updatedAt}`}
           />
           <IconButton
             edge="end"
