@@ -24,7 +24,7 @@ const DashboardNavbar = ({ onMobileNavOpen, ...rest }) => {
     >
       <Toolbar>
         <RouterLink to="/">
-          <Logo />
+          <Logo height="40px"/>
         </RouterLink>
         <Box sx={{ flexGrow: 1 }} />
         <Hidden xlDown>
