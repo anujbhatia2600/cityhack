@@ -19,7 +19,8 @@ import {
   ShoppingBag as ShoppingBagIcon,
   User as UserIcon,
   UserPlus as UserPlusIcon,
-  Users as UsersIcon
+  Users as UsersIcon,
+  Inbox as InboxIcon,
 } from 'react-feather';
 import NavItem from './NavItem';
 
@@ -44,6 +45,11 @@ const items = [
     href: '/app/products',
     icon: ShoppingBagIcon,
     title: 'Government Funds'
+  },
+  {
+    href: '/app/inbox',
+    icon: InboxIcon,
+    title: 'Inbox',
   },
   // {
   //   href: '/app/account',
