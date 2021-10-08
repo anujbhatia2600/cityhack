@@ -12,6 +12,7 @@ import Inbox from './pages/Inbox';
 import Kanban from './pages/Kanban';
 import Network from './pages/Network';
 import TextConverter from './pages/TextConverter';
+import LandingPage from './pages/LandingPage';
 
 const routes = [
   {
@@ -36,7 +37,7 @@ const routes = [
       { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },
       { path: '404', element: <NotFound /> },
-      { path: '/', element: <Navigate to="/app/dashboard" /> },
+      { path: '/', element: <LandingPage /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   }
