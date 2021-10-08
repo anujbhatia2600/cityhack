@@ -9,6 +9,7 @@ import TotalCustomers from '../components/dashboard/TotalCustomers';
 import TotalProfit from '../components/dashboard/TotalProfit';
 import TrafficByDevice from '../components/dashboard/TrafficByDevice';
 
+
 const Dashboard = () => (
   <>
     <Helmet>
@@ -101,7 +102,7 @@ const Dashboard = () => (
         </Grid>
       </Container>
     </Box>
-  </>
+    </>
 );
 
 export default Dashboard;
