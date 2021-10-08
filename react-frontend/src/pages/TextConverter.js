@@ -19,22 +19,26 @@ import {
 } from '@material-ui/core';
 import { FileUploader } from 'react-drag-drop-files';
 import BasicModal from '../components/Modal';
+import Spinner from '../components/Spinner';
 
 const fileTypes = ["PDF", "DOC", "JPEG", "PNG"];
 
 const TextConverter = () => {
     const [file, setFile] = useState(null);
     const handleChange = file => {
-        setFile(file);
-        console.log(file);
+        setloading(true);
+        setTimeout(() => {setFile(file);
+          console.log(file);}, 3000);
     };
+    const [loading, setloading] = useState(false);
     return (
         <>
         <Helmet>
           <title>Text Converter</title>
         </Helmet>
         {(!file)?
-        <Box marginTop="300px" marginLeft="400px">
+        <Box marginTop="300px" marginLeft="400px" align="center">
+          {loading && <Spinner /> }
           <FileUploader 
             style={{height:"200px"}}
             handleChange={handleChange} 
