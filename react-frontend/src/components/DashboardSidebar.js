@@ -58,11 +58,6 @@ const items = [
     icon: InboxIcon,
     title: 'Inbox',
   },
-  // {
-  //   href: '/app/account',
-  //   icon: UserIcon,
-  //   title: 'Account'
-  // },
   {
     href: '/app/settings',
     icon: SettingsIcon,

@@ -2,7 +2,6 @@ import { Navigate } from 'react-router-dom';
 import DashboardLayout from './components/DashboardLayout';
 import MainLayout from './components/MainLayout';
 import Account from './pages/Account';
-import CustomerList from './pages/CustomerList';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
@@ -19,7 +18,6 @@ const routes = [
     element: <DashboardLayout />,
     children: [
       { path: 'account', element: <Account /> },
-      { path: 'customers', element: <CustomerList /> },
       { path: 'network', element: <Network /> },
       { path: 'dashboard', element: <Dashboard /> },
       { path: 'kanban', element: <Kanban/>},
