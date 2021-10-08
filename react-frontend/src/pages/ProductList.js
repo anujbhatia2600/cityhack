@@ -3,16 +3,20 @@ import {
   Box,
   Container,
   Grid,
-  Pagination
+  Card,
+  CardContent,
+  TextField,
+  InputAdornment,
+  SvgIcon
 } from '@material-ui/core';
-import ProductListToolbar from '../components/product/ProductListToolbar';
+import { Search as SearchIcon } from 'react-feather';
 import ProductCard from '../components/product/ProductCard';
 import products from '../__mocks__/products';
 
 const ProductList = () => (
   <>
     <Helmet>
-      <title>Products | Material Kit</title>
+      <title>Government Funds | Asiadhhra</title>
     </Helmet>
     <Box
       sx={{
@@ -22,7 +26,31 @@ const ProductList = () => (
       }}
     >
       <Container maxWidth={false}>
-        <ProductListToolbar />
+        <Box sx={{ mt: 3 }}>
+          <Card>
+            <CardContent>
+              <Box sx={{ maxWidth: 500 }}>
+                <TextField
+                  fullWidth
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <SvgIcon
+                          fontSize="small"
+                          color="action"
+                        >
+                          <SearchIcon />
+                        </SvgIcon>
+                      </InputAdornment>
+                    )
+                  }}
+                  placeholder="Search product"
+                  variant="outlined"
+                />
+              </Box>
+            </CardContent>
+          </Card>
+        </Box>
         <Box sx={{ pt: 3 }}>
           <Grid
             container
@@ -40,19 +68,6 @@ const ProductList = () => (
               </Grid>
             ))}
           </Grid>
-        </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            pt: 3
-          }}
-        >
-          <Pagination
-            color="primary"
-            count={3}
-            size="small"
-          />
         </Box>
       </Container>
     </Box>

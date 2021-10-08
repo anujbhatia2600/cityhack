@@ -28,8 +28,8 @@ import NavItem from './NavItem';
 
 const user = {
   avatar: '/static/images/avatars/avatar_6.png',
-  jobTitle: 'Senior Developer',
-  name: 'Katarina Smith'
+  jobTitle: '# tag1 #tag2',
+  name: 'RPO #1'
 };
 
 const items = [
