@@ -19,7 +19,7 @@ const TrafficByDevice = (props) => {
   const data = {
     datasets: [
       {
-        data: [15, 27, 58],
+        data: [17, 34, 49],
         backgroundColor: [
           colors.indigo[500],
           colors.red[600],
@@ -58,19 +58,19 @@ const TrafficByDevice = (props) => {
   const devices = [
     {
       title: 'Ongoing',
-      value: 15,
+      value: 17,
       icon: LaptopMacIcon,
       color: colors.indigo[500]
     },
     {
       title: 'Accomplished',
-      value: 27,
+      value: 34,
       icon: TabletIcon,
       color: colors.red[600]
     },
     {
       title: 'In the list',
-      value: 58,
+      value: 49,
       icon: PhoneIcon,
       color: colors.orange[600]
     }
