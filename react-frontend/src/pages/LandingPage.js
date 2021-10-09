@@ -39,11 +39,14 @@ const LandingPage = () => {
             style={{
               display: 'block',
               margin: '0 auto',
-              marginBottom: 40,
+              marginBottom: 20,
               backgroundColor: 'green',
               borderRadius: 15,
             }}
           />
+          <h1 style={{margin: "0 auto",textAlign:"center",marginTop: 20,marginBottom: 20,color:""}}>Welcome to Platform</h1>
+
+
           <Button
             color="primary"
                 // disabled={isSubmitting}
@@ -51,18 +54,23 @@ const LandingPage = () => {
             size="large"
             type="submit"
             variant="contained"
-            style={{ marginBottom: 15 }}
+            style={{ marginBottom: 15,
+              borderRadius: 10,
+            fontSize: 20}}
             href="/login"
           >
             Login
           </Button>
+          <h3 style={{margin: "0 auto",textAlign:"center",marginTop: 5,marginBottom: 20,color:""}}>New to this platform? Register Now</h3>
           <Button
             color="primary"
                 // disabled={isSubmitting}
             fullWidth
-            size="large"
+            size="middle"
             type="submit"
             variant="contained"
+            style={{ marginBottom: 15,
+              borderRadius: 10}}
             href="/register"
           >
             Register

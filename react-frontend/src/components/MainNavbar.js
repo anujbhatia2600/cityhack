@@ -8,7 +8,7 @@ const MainNavbar = (props) => (
     {...props}
   >
     <Toolbar sx={{ height: 64 }}>
-      <RouterLink to="/">
+      <RouterLink to="/app/dashboard">
         <Logo src="/static/AsiaDhraaLogo.png" height="40px"/>
       </RouterLink>
     </Toolbar>
