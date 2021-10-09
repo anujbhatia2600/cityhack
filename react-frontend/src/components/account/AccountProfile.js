@@ -11,12 +11,12 @@ import {
 } from '@material-ui/core';
 
 const user = {
-  avatar: '/static/images/avatars/avatar_6.png',
-  city: 'Los Angeles',
-  country: 'USA',
+  avatar: '/static/images/ugat.png',
+  city: 'Hong Kong',
+  country: 'Hong Kong',
   jobTitle: 'Senior Developer',
-  name: 'Katarina Smith',
-  timezone: 'GTM-7'
+  name: 'UGAT',
+  timezone: 'GTM+8'
 };
 
 const AccountProfile = (props) => (
