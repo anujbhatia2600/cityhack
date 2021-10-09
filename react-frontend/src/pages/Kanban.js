@@ -8,11 +8,11 @@ const Kanban = () => {
             title: 'Yearly Goals and Tasks',
             cards: [
               {
-                description: '2 Gallons of milk at the Deli store',
-                id: 'Milk',
+                description: 'Construction of new processing facility',
+                id: 'processing facility',
                 label: 'Urgent',
                 laneId: 'PLANNED',
-                title: 'Buy milk'
+                title: 'Processing Facility'
               },
             ],
             style: {backgroundColor: 'white'},
@@ -23,7 +23,22 @@ const Kanban = () => {
           {
             id: 'month',
             title: 'Monthly Goals and Tasks',
-            cards: [],
+            cards: [
+              {
+                description: 'Development of Calamansi Learning Site with IDOFS',
+                id: 'learning-site',
+                label: 'Medium',
+                laneId: 'PLANNED',
+                title: 'Learning Site'
+              },
+              {
+                description: 'Renovation of existing office/meeting hall',
+                id: 'renovation',
+                label: 'low',
+                laneId: 'PLANNED',
+                title: 'Office Renovation'
+              },
+            ],
             style: {backgroundColor: 'white'},
             cardStyle : {backgroundColor: '#FAA094FF'}
 
@@ -31,7 +46,15 @@ const Kanban = () => {
           {
             id: 'week',
             title: 'Weekly Goals and Tasks',
-            cards: [],
+            cards: [
+              {
+                description: 'Calamansi Production Technology Trainings',
+                id: 'Calamansi-tech',
+                label: 'Urgent',
+                laneId: 'PLANNED',
+                title: 'Technology Trainings'
+              },
+            ],
             style: {backgroundColor: 'white'},
             cardStyle : {backgroundColor: '#9ED9CCFF'}
 
@@ -39,7 +62,15 @@ const Kanban = () => {
           {
             id: 'completed',
             title: 'Completed Tasks',
-            cards: [],
+            cards: [
+              {
+                description: 'Construction of water refilling station',
+                id: 'water-station',
+                label: 'Medium',
+                laneId: 'PLANNED',
+                title: 'Water Station'
+              },
+            ],
             style: {backgroundColor: 'white'},
             cardStyle : {backgroundColor: '#008C76FF'}
 
