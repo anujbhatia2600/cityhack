@@ -7,11 +7,13 @@ import {
   Divider,
   Typography,
   colors,
-  useTheme
+  useTheme,
+  Button
 } from '@material-ui/core';
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 import PhoneIcon from '@material-ui/icons/Phone';
 import TabletIcon from '@material-ui/icons/Tablet';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const TrafficByDevice = (props) => {
   const theme = useTheme();
@@ -128,6 +130,24 @@ const TrafficByDevice = (props) => {
           ))}
         </Box>
       </CardContent>
+      <Divider />
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          p: 2
+        }}
+      >
+        <Button
+          color="primary"
+          endIcon={<ArrowRightIcon />}
+          size="small"
+          variant="text"
+          href="/app/kanban"
+        >
+          My Kanban
+        </Button>
+      </Box>
     </Card>
   );
 };

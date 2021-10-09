@@ -7,6 +7,7 @@ import {
   Box,
   Hidden,
   IconButton,
+  Button,
   Toolbar
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -24,22 +25,16 @@ const DashboardNavbar = ({ onMobileNavOpen, ...rest }) => {
     >
       <Toolbar>
         <RouterLink to="/">
-          <Logo height="40px"/>
+          <Logo height="40px" />
         </RouterLink>
         <Box sx={{ flexGrow: 1 }} />
         <Hidden xlDown>
-          <IconButton color="inherit" size="large">
-            <Badge
-              badgeContent={notifications.length}
-              color="primary"
-              variant="dot"
-            >
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <IconButton color="inherit" size="large">
-            <InputIcon />
-          </IconButton>
+          <Button variant="contained" href="/app/inbox" endIcon={<NotificationsIcon />}>
+            Inbox
+          </Button>
+          <Button variant="contained" href="/" endIcon={<InputIcon />}>
+            Logout
+          </Button>
         </Hidden>
         <Hidden lgUp>
           <IconButton color="inherit" onClick={onMobileNavOpen} size="large">
