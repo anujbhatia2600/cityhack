@@ -33,6 +33,7 @@ const LandingPage = () => {
         }}
       >
         <Container maxWidth="sm">
+          <div style={{backgroundColor:"#e9f0e9",borderRadius: 15,padding:"20px",boxShadow:"10px 5px #d0d9d1"}}>
           <Logo
             src="/static/AsiaDhraaLogo.png"
             height="80px"
@@ -44,9 +45,7 @@ const LandingPage = () => {
               borderRadius: 15,
             }}
           />
-          <h1 style={{margin: "0 auto",textAlign:"center",marginTop: 20,marginBottom: 20,color:""}}>Welcome to Platform</h1>
-
-
+          <h1 style={{margin: "0 auto",textAlign:"center",marginTop: 20,marginBottom: 20,color:""}}>Welcome to RPO Dashboard</h1>
           <Button
             color="primary"
                 // disabled={isSubmitting}
@@ -75,6 +74,7 @@ const LandingPage = () => {
           >
             Register
           </Button>
+          </div>
         </Container>
       </Box>
     </>
