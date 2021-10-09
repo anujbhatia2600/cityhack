@@ -33,6 +33,7 @@ const LandingPage = () => {
         }}
       >
         <Container maxWidth="sm">
+          <div style={{backgroundColor:"#e9f0e9",borderRadius: 15,padding:"20px",boxShadow:"10px 5px #d0d9d1"}}>
           <Logo
             src="/static/AsiaDhraaLogo.png"
             height="80px"
@@ -44,7 +45,7 @@ const LandingPage = () => {
               borderRadius: 15,
             }}
           />
-          <h1 style={{margin: "0 auto",textAlign:"center",marginTop: 20,marginBottom: 20,color:""}}>Welcome to Platform</h1>
+          <h1 style={{margin: "0 auto",textAlign:"center",marginTop: 20,marginBottom: 20,color:"",fontFamily:"Roboto"}}>Welcome to Platform</h1>
 
 
           <Button
@@ -56,12 +57,12 @@ const LandingPage = () => {
             variant="contained"
             style={{ marginBottom: 15,
               borderRadius: 10,
-            fontSize: 20}}
+            fontSize: 20, height: 50}}
             href="/login"
           >
             Login
           </Button>
-          <h3 style={{margin: "0 auto",textAlign:"center",marginTop: 5,marginBottom: 20,color:""}}>New to this platform? Register Now</h3>
+          <h3 style={{margin: "0 auto",textAlign:"center",marginTop: 5,marginBottom: 20,color:"",fontFamily:"Roboto"}}>New to this platform? Register Now</h3>
           <Button
             color="primary"
                 // disabled={isSubmitting}
@@ -70,11 +71,13 @@ const LandingPage = () => {
             type="submit"
             variant="contained"
             style={{ marginBottom: 15,
-              borderRadius: 10}}
+              borderRadius: 10,
+              fontSize: 20, height: 50}}
             href="/register"
           >
             Register
           </Button>
+          </div>
         </Container>
       </Box>
     </>
