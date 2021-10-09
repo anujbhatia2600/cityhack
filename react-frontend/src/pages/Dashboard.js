@@ -8,6 +8,7 @@ import TasksProgress from '../components/dashboard/TasksProgress';
 import TotalCustomers from '../components/dashboard/TotalCustomers';
 import TotalProfit from '../components/dashboard/TotalProfit';
 import TrafficByDevice from '../components/dashboard/TrafficByDevice';
+import PartnerOrganizations from '../components/dashboard/PartnerOrganizations';
 
 
 const Dashboard = () => (
@@ -98,6 +99,15 @@ const Dashboard = () => (
             xs={12}
           >
             <LatestOrders />
+          </Grid>
+          <Grid
+            item
+            lg={12}
+            md={12}
+            xl={12}
+            xs={12}
+          >
+            <PartnerOrganizations />
           </Grid>
         </Grid>
       </Container>
