@@ -33,6 +33,7 @@ const LandingPage = () => {
         }}
       >
         <Container maxWidth="sm">
+          <div style={{backgroundColor:"#e9f0e9",borderRadius: 15,padding:"20px",boxShadow:"10px 5px #d0d9d1"}}>
           <Logo
             src="/static/AsiaDhraaLogo.png"
             height="80px"
@@ -76,6 +77,7 @@ const LandingPage = () => {
           >
             Register
           </Button>
+          </div>
         </Container>
       </Box>
     </>
