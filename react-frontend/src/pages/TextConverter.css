@@ -1,6 +1,11 @@
 .sc-iBaQBe{
     width: 1500px !important;
+    height: 300px !important;
 }
 .gTweye > span {
     font-size: 24px !important;
+}
+
+.file-types{
+    visibility: hidden;
 }

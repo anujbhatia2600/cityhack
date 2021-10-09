@@ -37,7 +37,7 @@ const TextConverter = () => {
           <title>Text Converter</title>
         </Helmet>
         {(!file)?
-        <Box marginTop="300px" marginLeft="400px" align="center">
+        <Box marginTop="250px" marginLeft="400px" align="center">
           {loading && <Spinner /> }
           <FileUploader 
             style={{height:"200px"}}
@@ -48,7 +48,7 @@ const TextConverter = () => {
         </Box>:
         <Grid container spacing={10}>
             <Grid item md={6} height="100%">
-            <img style = {{width:'100%', marginTop:'200px', marginLeft:'30px'}}src={URL.createObjectURL(file)}/>
+            <img style = {{width:'100%', marginTop:'20px', marginLeft:'30px'}}src={URL.createObjectURL(file)}/>
             </Grid>
             <Grid item md={6}>
             <Box
@@ -60,7 +60,7 @@ const TextConverter = () => {
                     justifyContent: 'center'
             }}
             >
-            <Container maxWidth="sm" style={{ overflow: 'auto' }}>
+            <Container maxWidth="sm" style={{ overflow: 'auto', marginTop:'20px' }}>
               <Formik
                 initialValues={{
                   email: 'banasifarmers@gmail.com',
