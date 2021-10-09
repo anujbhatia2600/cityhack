@@ -227,21 +227,20 @@ const Register = () => {
                   value={values.contactPerson}
                   variant="outlined"
                 />
-                <Select
-                  error={Boolean(touched.gender && errors.gender)}
+                <TextField
+                  value={values.gender}
+                  onChange={handleChange}
+                  select // tell TextField to render select
                   fullWidth
-                  helperText={touched.gender && errors.gender}
                   label="Gender"
                   name="gender"
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  value={values.gender}
+                  error={Boolean(touched.gender && errors.gender)}
                   variant="outlined"
                 >
                   <MenuItem value={10}>Male</MenuItem>
                   <MenuItem value={20}>Female</MenuItem>
                   <MenuItem value={30}>Prefer not to say</MenuItem>
-                </Select>
+                </TextField>
                 <TextField
                   error={Boolean(touched.contactPersonPosition && errors.contactPersonPosition)}
                   fullWidth
