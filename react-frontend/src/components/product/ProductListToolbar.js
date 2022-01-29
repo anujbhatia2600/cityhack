@@ -42,7 +42,7 @@ const ProductListToolbar = ({ search, setSearch, ...props }) => (
                   </InputAdornment>
                 )
               }}
-              placeholder="Search message"
+              placeholder="Search company"
               variant="outlined"
               value={search}
               onChange={(event) => { setSearch(event.target.value.toLowerCase()); }}
