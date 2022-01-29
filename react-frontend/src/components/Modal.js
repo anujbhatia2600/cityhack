@@ -45,8 +45,8 @@ export default function BasicModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Your form has been successfully stored in the database.
+          <Typography id="modal-modal-title" variant="h2" component="h2" sx={{ textAlign: 'center', p: 1 }}>
+            Transaction Cost: 0.2IBT
           </Typography>
           <Button
             onClick={refreshPage}
@@ -56,7 +56,7 @@ export default function BasicModal() {
             type="submit"
             variant="contained"
           >
-            Submit Another Form
+            Confirm Transaction
           </Button>
         </Box>
       </Modal>

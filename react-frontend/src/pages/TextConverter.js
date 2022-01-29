@@ -16,7 +16,12 @@ import {
   Select,
   MenuItem,
   Grid,
-  Modal
+  Modal,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions
 } from '@material-ui/core';
 import { FileUploader } from 'react-drag-drop-files';
 import BasicModal from '../components/Modal';
@@ -28,16 +33,18 @@ const TextConverter = () => {
   const [file, setFile] = useState(null);
   const [isModal, setIsModal] = useState(null);
   const handleChange = file => {
-    setIsModal(true);
+    // setIsModal(true);
+    setloading(true);
     setTimeout(() => {
       setFile(file);
       console.log(file);
     }, 3000);
   };
 
-  const handleModal = () => {
+  const handleClose = () => {
+    setOpen(false);
+  };
 
-  }
   const [loading, setloading] = useState(false);
   return (
     <>
@@ -54,13 +61,28 @@ const TextConverter = () => {
             types={fileTypes}
           />
         </Box> :
-        isModal ? <Modal open={isModal} onClose={null} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-          <Box style={{ backgroundColor: 'red', width: '40%', height: '40%' }}>
-            <Typography>
-              Text in a modal
-            </Typography>
-          </Box>
-        </Modal> :
+        isModal ? <Dialog
+          open={isModal}
+          onClose={handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            Use Google's location service?
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              Let Google help apps determine location. This means sending anonymous
+              location data to Google, even when no apps are running.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Disagree</Button>
+            <Button onClick={handleClose} autoFocus>
+              Agree
+            </Button>
+          </DialogActions>
+        </Dialog> :
           <Grid container spacing={10}>
             <Grid item md={6} height="100%">
               <img style={{ width: '100%', marginTop: '20px', marginLeft: '30px' }} src={URL.createObjectURL(file)} />
