@@ -11,10 +11,10 @@ import ProductCard from '../components/product/ProductCard';
 import products from '../__mocks__/products';
 
 const ProductList = () => {
-    const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('');
 
-    return (
-      <>
+  return (
+    <>
       <Helmet>
         <title>Products | Material Kit</title>
       </Helmet>
@@ -32,7 +32,7 @@ const ProductList = () => {
               container
               spacing={3}
             >
-              {products.filter((x) =>x.title.includes(search)).map((product) => (
+              {products.filter((x) => x.title.toLowerCase().includes(search)).map((product) => (
                 <Grid
                   item
                   key={product.id}

@@ -45,7 +45,7 @@ const ProductListToolbar = ({ search, setSearch, ...props }) => (
               placeholder="Search message"
               variant="outlined"
               value={search}
-              onChange={(event)=>{setSearch(event.target.value);}}
+              onChange={(event) => { setSearch(event.target.value.toLowerCase()); }}
             />
           </Box>
         </CardContent>
