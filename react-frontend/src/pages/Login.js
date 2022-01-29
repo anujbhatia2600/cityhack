@@ -34,7 +34,7 @@ const Login = () => {
         <Container maxWidth="sm">
           <Formik
             initialValues={{
-              email: 'rpo1@asiadhrass.io',
+              email: 'investor1@investobit.io',
               password: 'Password123'
             }}
             validationSchema={Yup.object().shape({
@@ -42,7 +42,7 @@ const Login = () => {
               password: Yup.string().max(255).required('Password is required')
             })}
             onSubmit={(values) => {
-              if (values.email === 'rpo1@asiadhrass.io' && values.password === 'Password123') {
+              if (values.email === 'investor1@investobit.io' && values.password === 'Password123') {
                 navigate('/app/dashboard', { replace: true });
               } else {
                 setError(true);

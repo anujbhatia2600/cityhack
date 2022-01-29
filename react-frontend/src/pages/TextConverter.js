@@ -78,7 +78,7 @@ const TextConverter = () => {
   return (
     <>
       <Helmet>
-        <title>Text Converter</title>
+        <title>Upload</title>
       </Helmet>
       {(!file)
         ? (

@@ -16,7 +16,7 @@ const ProductList = () => {
   return (
     <>
       <Helmet>
-        <title>Products | Material Kit</title>
+        <title>Companies</title>
       </Helmet>
       <Box
         sx={{
