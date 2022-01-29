@@ -20,75 +20,45 @@ import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 const orders = [
   {
     id: uuid(),
-    ref: 'Oriental Mindoro Provincial Government',
-    amount: 30.5,
-    customer: {
-      name: 'Government'
-    },
-    createdAt: 'Local',
-    status: 'Oriental Mindoro is now acclaimed as one of the most visited provinces in the region and one of the major tourist destination in the Philippines.',
-    class: 'Local'
+    ref: 'MarketWatch',
+    status: "Jim Cramer literally drowns Cathie Wood's ARK as flagship funds falter ",
+    createdAt: '29-Jan-2022',
   },
   {
     id: uuid(),
-    ref: 'DTI',
-    amount: 25.1,
-    customer: {
-      name: 'Government'
-    },
-    createdAt: 'National',
-    status: 'Department of Trade and Indsutry Philippines is responsible for realizing the countrys goal of globally competitive and innovative industry and services sector',
-    class: 'National'
+    ref: 'Morningstar research ',
+    status: "Analyst report: Synchrony Financial ",
+    createdAt: '24-Jan-2022',
   },
   {
     id: uuid(),
-    ref: 'Provincial Agriculture Office',
-    amount: 10.99,
-    customer: {
-      name: 'Government'
-    },
-    createdAt: 'Local',
-    status: 'The Department is the government agency responsible for the promotion of agricultural development by providing the policy framework, public investments, and support services needed for domestic and export-oriented business enterprises.',
-    class: 'Local'
+    ref: 'Barrons.com',
+    status: "Tech Is Still Getting Crushed. Here Are 15 Stocks to Buy in a Changed World.",
+    createdAt: '21-Jan-2022',
   },
   {
     id: uuid(),
-    ref: 'DAR',
-    amount: 96.43,
-    customer: {
-      name: 'Government'
-    },
-    createdAt: 'National',
-    status: 'DAR is the lead government agency that holds and implements comprehensive and genuine agrarian reform which actualizes equitable land distribution, ownership, agricultural productivity, and tenurial security for, of and with the tillers of the land towards the improvement of their quality of life.',
-    class: 'National'
+    ref: 'MarketWatch',
+    status: "‘Easter Bunny cartoon cash’ — how Bill Maher called the Bitcoin crash",
+    createdAt: '11-Jan-2022',
   },
   {
     id: uuid(),
-    ref: 'DOST',
-    amount: 32.54,
-    customer: {
-      name: 'Government'
-    },
-    createdAt: 'National',
-    status: 'The Department of Science and Technology (DOST) is the premiere science and technology body in the country charged with the twin mandate of providing central direction, leadership and coordination.',
-    class: 'Regional'
+    ref: 'MarketWatch',
+    status: "Intel stock hits lowest price in more than a year, and there is another shoe to drop",
+    createdAt: '01-Jan-2022',
   },
   {
     id: uuid(),
-    ref: 'Municipality of Pola',
-    amount: 16.76,
-    customer: {
-      name: 'NGO'
-    },
-    createdAt: 'Local',
-    status: 'Pola is a 3rd class municipality in the province of Oriental Mindoro, Philippines. ',
-    class: 'Local'
-  }
+    ref: 'Yahoo Finance',
+    status: "Tesla rival Rivian's stock could skyrocket at least 160%, says top analyst",
+    createdAt: '29-Dec-2021',
+  },
 ];
 
 const LatestOrders = (props) => (
   <Card {...props}>
-    <CardHeader title="Partner Organizations / Agency" />
+    <CardHeader title="Latest Updates" />
     <Divider />
     <PerfectScrollbar>
       <Box sx={{ minWidth: 800 }}>
@@ -96,19 +66,13 @@ const LatestOrders = (props) => (
           <TableHead>
             <TableRow>
               <TableCell>
-                Name
+                Data source
               </TableCell>
               <TableCell>
-                Classification
+                Title
               </TableCell>
               <TableCell>
-                Level of implementation
-              </TableCell>
-              <TableCell>
-                Partnership info
-              </TableCell>
-              <TableCell>
-                Other Classifications
+                Created at
               </TableCell>
             </TableRow>
           </TableHead>
@@ -122,16 +86,10 @@ const LatestOrders = (props) => (
                   {order.ref}
                 </TableCell>
                 <TableCell>
-                  {order.customer.name}
-                </TableCell>
-                <TableCell>
-                  {order.createdAt}
-                </TableCell>
-                <TableCell>
                   {order.status}
                 </TableCell>
                 <TableCell>
-                  {order.class}
+                  {order.createdAt}
                 </TableCell>
               </TableRow>
             ))}

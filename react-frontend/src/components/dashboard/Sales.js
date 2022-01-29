@@ -24,7 +24,7 @@ const Sales = (props) => {
         borderRadius: 4,
         categoryPercentage: 0.5,
         data: [2, 2, 3, 2, 3, 3, 2, 2],
-        label: 'Last year',
+        label: 'Last month',
         maxBarThickness: 10
       },
       {
@@ -34,11 +34,11 @@ const Sales = (props) => {
         borderRadius: 4,
         categoryPercentage: 0.5,
         data: [2, 3, 5, 2, 4, 3, 3, 2],
-        label: 'This year',
+        label: 'This month',
         maxBarThickness: 10
       }
     ],
-    labels: ['Representativity', 'Participation', 'Accountability', 'Inclusiveness', 'Professionalism', 'Finance', 'Networking', 'Marketing']
+    labels: ['Agriculture', 'Finance', 'Technology', 'Biotechnology', 'Space Exploration', 'E-commerce', 'Aviation', 'Marketing']
   };
 
   const options = {
@@ -101,10 +101,10 @@ const Sales = (props) => {
             size="small"
             variant="text"
           >
-            Last 2 years
+            Last 2 months
           </Button>
         )}
-        title="Growth Monitoring"
+        title="Number of APIs fetched by industry"
       />
       <Divider />
       <CardContent>

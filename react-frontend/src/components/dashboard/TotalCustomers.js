@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
-import PeopleIcon from '@material-ui/icons/PeopleOutlined';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 const TotalCustomers = (props) => (
   <Card {...props}>
@@ -24,7 +24,7 @@ const TotalCustomers = (props) => (
             gutterBottom
             variant="h6"
           >
-            Current members
+            Total cryptotoken spent
           </Typography>
           <Typography
             color="textPrimary"
@@ -41,7 +41,7 @@ const TotalCustomers = (props) => (
               width: 56
             }}
           >
-            <PeopleIcon />
+            <AttachMoneyIcon />
           </Avatar>
         </Grid>
       </Grid>
@@ -52,11 +52,11 @@ const TotalCustomers = (props) => (
           pt: 2
         }}
       >
-        <ArrowUpwardIcon sx={{ color: green[900] }} />
+        <ArrowUpwardIcon sx={{ color: green[700] }} />
         <Typography
           variant="body2"
           sx={{
-            color: green[900],
+            color: green[700],
             mr: 1
           }}
         >
@@ -66,7 +66,7 @@ const TotalCustomers = (props) => (
           color="textSecondary"
           variant="caption"
         >
-          Since last year
+          Since last month
         </Typography>
       </Box>
     </CardContent>

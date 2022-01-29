@@ -27,7 +27,7 @@ const TasksProgress = (props) => (
             gutterBottom
             variant="h6"
           >
-            Overall Growth Level
+            Credibility score
           </Typography>
           <Typography
             color="textPrimary"

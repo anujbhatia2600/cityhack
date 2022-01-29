@@ -6,9 +6,9 @@ import {
   Grid,
   Typography
 } from '@material-ui/core';
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import NaturePeopleIcon from '@material-ui/icons/NaturePeople';
-import { red } from '@material-ui/core/colors';
+import { green, red } from '@material-ui/core/colors';
 
 const Budget = (props) => (
   <Card
@@ -27,7 +27,7 @@ const Budget = (props) => (
             gutterBottom
             variant="h6"
           >
-            Number of Farm Plans
+            Number of APIs called
           </Typography>
           <Typography
             color="textPrimary"
@@ -55,10 +55,10 @@ const Budget = (props) => (
           alignItems: 'center'
         }}
       >
-        <ArrowDownwardIcon sx={{ color: red[900] }} />
+        <ArrowUpwardIcon sx={{ color: green[700] }} />
         <Typography
           sx={{
-            color: red[900],
+            color: green[700],
             mr: 1
           }}
           variant="body2"
@@ -69,7 +69,7 @@ const Budget = (props) => (
           color="textSecondary"
           variant="caption"
         >
-          Since last year
+          Since last month
         </Typography>
       </Box>
     </CardContent>

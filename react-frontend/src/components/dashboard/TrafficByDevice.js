@@ -21,18 +21,19 @@ const TrafficByDevice = (props) => {
   const data = {
     datasets: [
       {
-        data: [17, 34, 49],
+        data: [19, 11, 49, 21],
         backgroundColor: [
           colors.indigo[500],
           colors.red[600],
-          colors.orange[600]
+          colors.orange[600],
+          colors.yellow[600]
         ],
         borderWidth: 8,
         borderColor: colors.common.white,
         hoverBorderColor: colors.common.white
       }
     ],
-    labels: ['Ongoing', 'Accomplished', 'In the list']
+    labels: ['Agriculture', 'Finance', 'Technology', 'Others']
   };
 
   const options = {
@@ -59,28 +60,34 @@ const TrafficByDevice = (props) => {
 
   const devices = [
     {
-      title: 'Ongoing',
-      value: 17,
+      title: 'Agriculture',
+      value: 19,
       icon: LaptopMacIcon,
       color: colors.indigo[500]
     },
     {
-      title: 'Accomplished',
-      value: 34,
+      title: 'Finance',
+      value: 11,
       icon: TabletIcon,
       color: colors.red[600]
     },
     {
-      title: 'In the list',
+      title: 'Technology',
       value: 49,
       icon: PhoneIcon,
       color: colors.orange[600]
-    }
+    },
+    {
+      title: 'Others',
+      value: 21,
+      icon: PhoneIcon,
+      color: colors.yellow[600]
+    },
   ];
 
   return (
     <Card {...props}>
-      <CardHeader title="Goals for this year" />
+      <CardHeader title="APIs fetched by industry" />
       <Divider />
       <CardContent>
         <Box
@@ -121,7 +128,7 @@ const TrafficByDevice = (props) => {
               </Typography>
               <Typography
                 style={{ color }}
-                variant="h2"
+                variant="h4"
               >
                 {value}
                 %
@@ -145,7 +152,7 @@ const TrafficByDevice = (props) => {
           variant="text"
           href="/app/kanban"
         >
-          My Kanban
+          My Expenses
         </Button>
       </Box>
     </Card>

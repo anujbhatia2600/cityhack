@@ -22,7 +22,9 @@ import {
   Inbox as InboxIcon,
   DollarSign as DollarIcon,
   List as ListIcon,
-  Type as TypeIcon
+  Type as TypeIcon,
+  Home as HomeIcon,
+  Link as LinkIcon
 } from 'react-feather';
 import NavItem from './NavItem';
 
@@ -36,27 +38,27 @@ const items = [
   {
     href: '/app/dashboard',
     icon: BarChartIcon,
-    title: 'My RPO'
+    title: 'My Profile'
   },
   {
     href: '/app/kanban',
-    icon : ListIcon,
-    title : "My Kanban"
+    icon: UsersIcon,
+    title: "Lenders"
   },
   {
     href: '/app/network',
     icon: UsersIcon,
-    title: 'My Network'
+    title: 'Investors'
   },
   {
     href: '/app/products',
-    icon: DollarIcon,
-    title: 'Government Funds'
+    icon: HomeIcon,
+    title: 'Company'
   },
   {
     href: '/app/text-converter',
-    icon : TypeIcon,
-    title : 'Convert Text Data'
+    icon: ListIcon,
+    title: 'API Documentation'
   },
   {
     href: '/app/inbox',
@@ -133,44 +135,44 @@ const DashboardSidebar = ({ onMobileClose, openMobile }) => {
       </Box>
       <Box sx={{ flexGrow: 1 }} />
       {
-      //   <Box
-      //   sx={{
-      //     backgroundColor: 'background.default',
-      //     m: 2,
-      //     p: 2
-      //   }}
-      // >
-      //   <Typography
-      //     align="center"
-      //     gutterBottom
-      //     variant="h4"
-      //   >
-      //     Need more?
-      //   </Typography>
-      //   <Typography
-      //     align="center"
-      //     variant="body2"
-      //   >
-      //     Upgrade to PRO version and access 20 more screens
-      //   </Typography>
-      //   <Box
-      //     sx={{
-      //       display: 'flex',
-      //       justifyContent: 'center',
-      //       pt: 2
-      //     }}
-      //   >
-      //     <Button
-      //       color="primary"
-      //       component="a"
-      //       href="https://react-material-kit.devias.io"
-      //       variant="contained"
-      //     >
-      //       See PRO version
-      //     </Button>
-      //   </Box>
-      // </Box>
-    }
+        //   <Box
+        //   sx={{
+        //     backgroundColor: 'background.default',
+        //     m: 2,
+        //     p: 2
+        //   }}
+        // >
+        //   <Typography
+        //     align="center"
+        //     gutterBottom
+        //     variant="h4"
+        //   >
+        //     Need more?
+        //   </Typography>
+        //   <Typography
+        //     align="center"
+        //     variant="body2"
+        //   >
+        //     Upgrade to PRO version and access 20 more screens
+        //   </Typography>
+        //   <Box
+        //     sx={{
+        //       display: 'flex',
+        //       justifyContent: 'center',
+        //       pt: 2
+        //     }}
+        //   >
+        //     <Button
+        //       color="primary"
+        //       component="a"
+        //       href="https://react-material-kit.devias.io"
+        //       variant="contained"
+        //     >
+        //       See PRO version
+        //     </Button>
+        //   </Box>
+        // </Box>
+      }
     </Box>
   );
 

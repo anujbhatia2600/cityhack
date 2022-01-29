@@ -112,7 +112,7 @@ const Dashboard = () => (
         </Grid>
       </Container>
     </Box>
-    </>
+  </>
 );
 
 export default Dashboard;

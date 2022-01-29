@@ -17,32 +17,32 @@ import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 const products = [
   {
     id: uuid(),
-    name: 'Fruits',
-    imageUrl: '/static/images/products/product_1.jpeg',
+    name: 'Apple',
+    imageUrl: '/static/images/logos/apple.png',
     updatedAt: 'Calamansi'
   },
   {
     id: uuid(),
-    name: 'Vegetables',
-    imageUrl: '/static/images/products/product_2.jpeg',
+    name: 'Meta',
+    imageUrl: '/static/images/logos/meta.png',
     updatedAt: 'Potatoes, carrots'
   },
   {
     id: uuid(),
-    name: 'Cereals',
-    imageUrl: '/static/images/products/product_3.jpeg',
+    name: 'Netflix',
+    imageUrl: '/static/images/logos/netflix.png',
     updatedAt: 'wheat'
   },
   {
     id: uuid(),
-    name: 'Livestock',
-    imageUrl: '/static/images/products/product_4.jpeg',
+    name: 'Opensea',
+    imageUrl: '/static/images/logos/opensea.png',
     updatedAt: 'Cattle, sheep'
   },
   {
     id: uuid(),
-    name: 'Nuts',
-    imageUrl: '/static/images/products/product_5.jpeg',
+    name: 'Boeing',
+    imageUrl: '/static/images/logos/boeing.png',
     updatedAt: 'Almonds'
   }
 ];
@@ -51,7 +51,7 @@ const LatestProducts = (props) => (
   <Card {...props}>
     <CardHeader
       subtitle={`${products.length} in total`}
-      title="Focused Commondity"
+      title="Favorite Companies"
     />
     <Divider />
     <List>

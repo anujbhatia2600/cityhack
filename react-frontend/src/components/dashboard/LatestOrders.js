@@ -16,73 +16,74 @@ import {
   Tooltip
 } from '@material-ui/core';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import { red } from '@material-ui/core/colors';
 
 const orders = [
   {
     id: uuid(),
-    ref: 'Calamansi Production Technology Trainings',
+    ref: 'Apple',
     amount: 30.5,
     customer: {
-      name: 'Asiadhrra and GA'
+      name: 'Guy Kawasaki'
     },
     createdAt: 'Dec 2021',
-    status: 'pending'
+    status: 'Updated'
   },
   {
     id: uuid(),
-    ref: 'Development of Calamansi Learning Site with IDOFS',
+    ref: 'Google',
     amount: 25.1,
     customer: {
-      name: 'Asiadhrra and DAR'
+      name: 'Reuters'
     },
     createdAt: 'Aug 2021',
-    status: 'ongoing'
+    status: 'No Update'
   },
   {
     id: uuid(),
-    ref: 'Construction of new processing facility',
+    ref: 'Citi Bank',
     amount: 10.99,
     customer: {
-      name: 'Alexa Richardson'
+      name: 'Yahoo Finance'
     },
     createdAt: 'Feb 2021',
-    status: 'ongoing'
+    status: 'No Update'
   },
   {
     id: uuid(),
-    ref: 'Construction of water refilling station (Completion)',
+    ref: 'Meta',
     amount: 96.43,
     customer: {
-      name: 'DTI and ADMU'
+      name: 'Bloomberg'
     },
     createdAt: 'July 2020',
-    status: 'finished'
+    status: 'Updated'
   },
   {
     id: uuid(),
-    ref: 'Construction of water services facility',
+    ref: 'Netflix',
     amount: 32.54,
     customer: {
-      name: 'Asiadhrra and MARCCO'
+      name: 'Refinitiv'
     },
     createdAt: 'May 2020',
-    status: 'finished'
+    status: 'Updated'
   },
   {
     id: uuid(),
-    ref: 'Renovation of existing office/meeting hall',
+    ref: 'Amazon',
     amount: 16.76,
     customer: {
-      name: 'Asiadhrra'
+      name: 'Yahoo finance'
     },
     createdAt: 'Dec 2019',
-    status: 'finished'
+    status: 'No Update'
   }
 ];
 
 const LatestOrders = (props) => (
   <Card {...props}>
-    <CardHeader title="Previous Projects" />
+    <CardHeader title="Recently fetched APIs" />
     <Divider />
     <PerfectScrollbar>
       <Box sx={{ minWidth: 800 }}>
@@ -90,10 +91,10 @@ const LatestOrders = (props) => (
           <TableHead>
             <TableRow>
               <TableCell>
-                Project Title
+                Company Title
               </TableCell>
               <TableCell>
-                Funding Partner
+                Data source
               </TableCell>
               <TableCell sortDirection="desc">
                 <Tooltip
@@ -104,7 +105,7 @@ const LatestOrders = (props) => (
                     active
                     direction="desc"
                   >
-                    Start Date
+                    Time
                   </TableSortLabel>
                 </Tooltip>
               </TableCell>
@@ -130,7 +131,7 @@ const LatestOrders = (props) => (
                 </TableCell>
                 <TableCell>
                   <Chip
-                    color="primary"
+                    color={order.status !== "No Update" ? "primary" : 'secondary'}
                     label={order.status}
                     size="small"
                   />

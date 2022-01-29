@@ -22,7 +22,7 @@ const TotalProfit = (props) => (
             gutterBottom
             variant="h6"
           >
-            Total Sales
+            Wallet balance
           </Typography>
           <Typography
             color="textPrimary"
