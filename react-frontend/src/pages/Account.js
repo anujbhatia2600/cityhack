@@ -10,7 +10,7 @@ import AccountProfileDetails from '../components/account/AccountProfileDetails';
 const Account = () => (
   <>
     <Helmet>
-      <title>Account | Asiadhhra</title>
+      <title>Account | Investobit</title>
     </Helmet>
     <Box
       sx={{

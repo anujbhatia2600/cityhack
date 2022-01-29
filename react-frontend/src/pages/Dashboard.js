@@ -14,7 +14,7 @@ import PartnerOrganizations from '../components/dashboard/PartnerOrganizations';
 const Dashboard = () => (
   <>
     <Helmet>
-      <title>Dashboard | Asiadhhra</title>
+      <title>Dashboard | Investobit</title>
     </Helmet>
     <Box
       sx={{

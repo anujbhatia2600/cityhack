@@ -7,7 +7,7 @@ import customers from '../__mocks__/customers';
 const CustomerList = () => (
   <>
     <Helmet>
-      <title>Customers | Asiadhhra</title>
+      <title>Customers | Investobit</title>
     </Helmet>
     <Box
       sx={{

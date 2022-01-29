@@ -21,7 +21,7 @@ const LandingPage = () => {
   return (
     <>
       <Helmet>
-        <title>Welcome to AsiaDHRRA-RPO</title>
+        <title>Welcome to InvestoBit</title>
       </Helmet>
       <Box
         sx={{

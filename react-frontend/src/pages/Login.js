@@ -20,7 +20,7 @@ const Login = () => {
   return (
     <>
       <Helmet>
-        <title>Login | Asiadhhra</title>
+        <title>Login | Investobit</title>
       </Helmet>
       <Box
         sx={{
