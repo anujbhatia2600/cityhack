@@ -24,13 +24,13 @@ const TotalCustomers = (props) => (
             gutterBottom
             variant="h6"
           >
-            Total cryptotoken spent
+            Total earnings
           </Typography>
           <Typography
             color="textPrimary"
             variant="h3"
           >
-            324
+            4000 IBT
           </Typography>
         </Grid>
         <Grid item>
