@@ -17,33 +17,33 @@ import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 const products = [
   {
     id: uuid(),
-    name: 'Apple',
+    name: 'Apple Inc.',
     imageUrl: '/static/images/logos/apple.png',
-    updatedAt: 'Calamansi'
+    updatedAt: 'AAPL'
   },
   {
     id: uuid(),
-    name: 'Meta',
+    name: 'Meta Platforms, Inc.',
     imageUrl: '/static/images/logos/meta.png',
-    updatedAt: 'Potatoes, carrots'
+    updatedAt: 'FB'
   },
   {
     id: uuid(),
-    name: 'Netflix',
+    name: 'Netflix Inc.',
     imageUrl: '/static/images/logos/netflix.png',
-    updatedAt: 'wheat'
+    updatedAt: 'NFLX'
   },
   {
     id: uuid(),
     name: 'Opensea',
     imageUrl: '/static/images/logos/opensea.png',
-    updatedAt: 'Cattle, sheep'
+    updatedAt: ''
   },
   {
     id: uuid(),
-    name: 'Boeing',
+    name: 'The Boeing Company',
     imageUrl: '/static/images/logos/boeing.png',
-    updatedAt: 'Almonds'
+    updatedAt: 'BA'
   }
 ];
 
