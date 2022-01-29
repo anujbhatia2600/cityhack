@@ -41,22 +41,22 @@ const items = [
     title: 'My Profile'
   },
   {
-    href: '/app/kanban',
-    icon: UsersIcon,
-    title: "Lenders"
-  },
-  {
     href: '/app/network',
     icon: UsersIcon,
-    title: 'Investors'
+    title: 'Lenders and Investors'
   },
   {
     href: '/app/products',
     icon: HomeIcon,
-    title: 'Company'
+    title: 'Companies'
   },
   {
     href: '/app/text-converter',
+    icon: ListIcon,
+    title: 'Upload'
+  },
+  {
+    href: '/app/kanban',
     icon: ListIcon,
     title: 'API Documentation'
   },

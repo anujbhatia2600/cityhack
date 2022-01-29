@@ -21,7 +21,7 @@ import { red } from '@material-ui/core/colors';
 const orders = [
   {
     id: uuid(),
-    ref: 'Apple',
+    ref: 'Apple ',
     amount: 30.5,
     customer: {
       name: 'Guy Kawasaki'
@@ -31,7 +31,7 @@ const orders = [
   },
   {
     id: uuid(),
-    ref: 'Google',
+    ref: 'Alphabet ',
     amount: 25.1,
     customer: {
       name: 'Reuters'
@@ -41,7 +41,7 @@ const orders = [
   },
   {
     id: uuid(),
-    ref: 'Citi Bank',
+    ref: 'Citigroup ',
     amount: 10.99,
     customer: {
       name: 'Yahoo Finance'
@@ -51,7 +51,7 @@ const orders = [
   },
   {
     id: uuid(),
-    ref: 'Meta',
+    ref: 'Meta Platforms ',
     amount: 96.43,
     customer: {
       name: 'Bloomberg'
@@ -61,7 +61,7 @@ const orders = [
   },
   {
     id: uuid(),
-    ref: 'Netflix',
+    ref: 'Netflix ',
     amount: 32.54,
     customer: {
       name: 'Refinitiv'
@@ -71,7 +71,7 @@ const orders = [
   },
   {
     id: uuid(),
-    ref: 'Amazon',
+    ref: 'Amazon.com ',
     amount: 16.76,
     customer: {
       name: 'Yahoo finance'

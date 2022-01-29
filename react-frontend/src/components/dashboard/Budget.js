@@ -27,13 +27,13 @@ const Budget = (props) => (
             gutterBottom
             variant="h6"
           >
-            Number of APIs called
+            Total expenditure
           </Typography>
           <Typography
             color="textPrimary"
             variant="h3"
           >
-            54
+            54 IBT
           </Typography>
         </Grid>
         <Grid item>
