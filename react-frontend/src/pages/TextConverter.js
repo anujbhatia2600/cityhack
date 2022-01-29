@@ -21,13 +21,42 @@ import {
   DialogTitle,
   DialogContent,
   DialogContentText,
-  DialogActions
+  DialogActions,
+  Table,
+  TableBody,
+  TableCell,
+  TableRow,
+  TableHead
 } from '@material-ui/core';
 import { FileUploader } from 'react-drag-drop-files';
 import BasicModal from '../components/Modal';
 import Spinner from '../components/Spinner';
 
 const fileTypes = ["JSON", "CSV"];
+
+const tableData = {
+  "12 months ended": ["Sep 25, 2021", "Sep 26, 2020", "Sep 28, 2019", "Sep 29, 2018", "Sep 30, 2017", "Sep 24, 2016"],
+  "Products": ["2,97,392", "2,20,747", "2,13,883", "2,25,847", "1,96,534", "0"],
+  "Services": ["68,425", "53,768", "46,291", "39,748", "32,700", "0"],
+  "Net sales(legacy)": ["0", "0", "0", "0", "0", "2,15,639"],
+  "Net sales": ["3,65,817", "2,74,515", "2,60,174", "2,65,595", "2,29,234", "2,15,639"],
+  "Products": ["-1,92,266", "-1,51,286", "-1,44,996", "-1,48,164", "-1,26,337", "0"],
+  "Services": ["-20,715", "-18,273", "-16,786", "-15,592", "-14,711", "0"],
+  "Cost of sales(legacy)": ["0", "0", "0", "0", "0", "-1,31,376"],
+  "Cost of sales": ["-2,12,981", "-1,69,559", "-1,61,782", "-1,63,756", "-1,41,048", "-1,31,376"],
+  "Gross margin": ["1,52,836", "1,04,956", "98,392", "1,01,839", "88,186", "84,263"],
+  "Research and development": ["-21,914", "-18,752", "-16,217", "-14,236", "-11,581", "-10,045"],
+  "Selling, general and administrative": ["-21,973", "-19,916", "-18,245", "-16,705", "-15,261", "-14,194"],
+  "Operating expenses": ["-43,887", "-38,668", "-34,462", "-30,941", "-26,842", "-24,239"],
+  "Operating income": ["1,08,949", "66,288", "63,930", "70,898", "61,344", "60,024"],
+  "Interest and dividend income": ["2,843", "3,763", "4,961", "5,686", "5,201", "3,999"],
+  "Interest expense": ["-2,645", "-2,873", "-3,576", "-3,240", "-2,323", "-1,456"],
+  "Other income (expense), net": ["60", '-87', "422", "-441", "-133", "-1,195"],
+  "Other income (expense), net": ["258", "803", "1,807", "2,005", "2,745", "1,348"],
+  "Income before provision for income taxes": ["1,09,207", "67,091", "65,737", "72,903", "64,089", "61,372"],
+  "Provision for income taxes": ["-14,527", "-9,680", "-10,481", "-13,372", "-15,738", "-15,685"],
+  "Net income": ["94,680", "57,411", "55,256", "59,531", "48,351", "45,687"]
+}
 
 const TextConverter = () => {
   const [file, setFile] = useState(null);
@@ -84,9 +113,6 @@ const TextConverter = () => {
           </DialogActions>
         </Dialog> :
           <Grid container spacing={10}>
-            <Grid item md={6} height="100%">
-              <img style={{ width: '100%', marginTop: '20px', marginLeft: '30px' }} src={URL.createObjectURL(file)} />
-            </Grid>
             <Grid item md={6}>
               <Box
                 sx={{
@@ -98,338 +124,24 @@ const TextConverter = () => {
                 }}
               >
                 <Container maxWidth="sm" style={{ overflow: 'auto', marginTop: '20px' }}>
-                  <Formik
-                    initialValues={{
-                      email: 'banasifarmers@gmail.com',
-                      orgName: 'Banasi Formers Association',
-                      socMed: 'N/A',
-                      country: 'Philippines',
-                      address: '11 Victoneta Avenue, Malabon',
-                      association: true,
-                      NGO: false,
-                      foundation: false,
-                      networkNGO: false,
-                      contactNumber: '+63 2234567',
-                      web: 'banasifarmers.ph',
-                      dateFounded: '02.10.2017',
-                      member: '15.06.2019',
-                      orgStrength: false,
-                      par: false,
-                      instiLink: true,
-                      agriProduct: true,
-                    }}
-                    validationSchema={
-                      Yup.object().shape({
-                        email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-                        orgName: Yup.string().max(255).required('Organization name is required'),
-                        country: Yup.string().max(255).required('Country is required'),
-                        address: Yup.string().max(255).required('address is required'),
-                      })
-                    }
-                    onSubmit={(values) => {
-                      console.log(values);
-                      navigate('/app/dashboard', { replace: true });
-                    }}
-                  >
-                    {({
-                      errors,
-                      handleBlur,
-                      handleChange,
-                      handleSubmit,
-                      isSubmitting,
-                      touched,
-                      values
-                    }) => (
-                      <form onSubmit={handleSubmit}>
-                        <Box sx={{ mb: 3 }}>
-                          <Typography
-                            color="textPrimary"
-                            variant="h2"
-                            gutterBottom
-                          >
-                            Confirm details
-                          </Typography>
-                          <Typography
-                            color="textSecondary"
-                            variant="body2"
-                          >
-                            Double check if there is any error in the conversion
-                          </Typography>
-                        </Box>
-                        <Typography
-                          color="textPrimary"
-                          variant="h4"
-                          gutterBottom
-                        >
-                          Organization
-                        </Typography>
-                        <TextField
-                          error={Boolean(touched.orgName && errors.orgName)}
-                          fullWidth
-                          helperText={touched.orgName && errors.orgName}
-                          label="Name of the organization"
-                          margin="normal"
-                          name="orgName"
-                          onBlur={handleBlur}
-                          onChange={handleChange}
-                          value={values.orgName}
-                          variant="outlined"
-                        />
-                        <Typography
-                          color="textPrimary"
-                          variant="h4"
-                          gutterBottom
-                        >
-                          Country
-                        </Typography>
-                        <TextField
-                          error={Boolean(touched.country && errors.country)}
-                          fullWidth
-                          helperText={touched.country && errors.country}
-                          label="Country"
-                          margin="normal"
-                          name="country"
-                          onBlur={handleBlur}
-                          onChange={handleChange}
-                          value={values.country}
-                          variant="outlined"
-                        />
-                        <Typography
-                          color="textPrimary"
-                          variant="h4"
-                          gutterBottom
-                        >
-                          Main Office Address
-                        </Typography>
-                        <TextField
-                          error={Boolean(touched.address && errors.address)}
-                          fullWidth
-                          helperText={touched.address && errors.address}
-                          label="Address"
-                          margin="normal"
-                          name="address"
-                          onBlur={handleBlur}
-                          onChange={handleChange}
-                          value={values.address}
-                          variant="outlined"
-                        />
-                        <Typography
-                          color="textPrimary"
-                          variant="h4"
-                        >
-                          Contacts
-                        </Typography>
-                        <TextField
-                          error={Boolean(touched.contactNumber && errors.contactNumber)}
-                          fullWidth
-                          helperText={touched.contactNumber && errors.contactNumber}
-                          label="Contact Number"
-                          margin="normal"
-                          name="contactNumber"
-                          onBlur={handleBlur}
-                          onChange={handleChange}
-                          value={values.contactNumber}
-                          variant="outlined"
-                        />
-                        <TextField
-                          error={Boolean(touched.email && errors.email)}
-                          fullWidth
-                          helperText={touched.email && errors.email}
-                          label="Email Address"
-                          margin="normal"
-                          name="email"
-                          onBlur={handleBlur}
-                          onChange={handleChange}
-                          type="email"
-                          value={values.email}
-                          variant="outlined"
-                        />
-                        <TextField
-                          error={Boolean(touched.web && errors.web)}
-                          fullWidth
-                          helperText={touched.web && errors.web}
-                          label="Website URL"
-                          margin="normal"
-                          name="web"
-                          onBlur={handleBlur}
-                          onChange={handleChange}
-                          value={values.web}
-                          variant="outlined"
-                        />
-                        <TextField
-                          error={Boolean(touched.socMed && errors.socMed)}
-                          fullWidth
-                          helperText={touched.socMed && errors.socMed}
-                          label="Social media URL"
-                          margin="normal"
-                          name="socMed"
-                          onBlur={handleBlur}
-                          onChange={handleChange}
-                          value={values.socMed}
-                          variant="outlined"
-                        />
-                        <Typography
-                          color="textPrimary"
-                          variant="h4"
-                          gutterBottom
-                        >
-                          Legal Form
-                        </Typography>
-                        <Box
-                          sx={{
-                            alignItems: 'center',
-                            display: 'flex',
-                            ml: -1
-                          }}
-                        >
-                          <Checkbox
-                            checked={values.association}
-                            name="association"
-                            onChange={handleChange}
-                          />
-                          <Typography
-                            color="textSecondary"
-                            variant="body1"
-                          >
-                            Association
-                          </Typography>
-                          <Checkbox
-                            checked={values.NGO}
-                            name="NGO"
-                            onChange={handleChange}
-                          />
-                          <Typography
-                            color="textSecondary"
-                            variant="body1"
-                          >
-                            NGO
-                          </Typography>
-                          <Checkbox
-                            checked={values.foundation}
-                            name="foundation"
-                            onChange={handleChange}
-                          />
-                          <Typography
-                            color="textSecondary"
-                            variant="body1"
-                          >
-                            Foundation
-                          </Typography>
-                          <Checkbox
-                            checked={values.networkNGO}
-                            name="networkNGO"
-                            onChange={handleChange}
-                          />
-                          <Typography
-                            color="textSecondary"
-                            variant="body1"
-                          >
-                            Network of NGOs
-                          </Typography>
-                        </Box>
-
-                        <Typography
-                          color="textPrimary"
-                          variant="h4"
-                          gutterBottom
-                        >
-                          Key Figures
-                        </Typography>
-                        <TextField
-                          error={Boolean(touched.dateFounded && errors.dateFounded)}
-                          fullWidth
-                          helperText={touched.dateFounded && errors.dateFounded}
-                          label="Date Founded"
-                          margin="normal"
-                          name="dateFounded"
-                          onBlur={handleBlur}
-                          onChange={handleChange}
-                          value={values.dateFounded}
-                          variant="outlined"
-                        />
-                        <TextField
-                          error={Boolean(touched.member && errors.member)}
-                          fullWidth
-                          helperText={touched.member && errors.member}
-                          label="Member of AsiaDHRAA since"
-                          margin="normal"
-                          name="member"
-                          onBlur={handleBlur}
-                          onChange={handleChange}
-                          value={values.member}
-                          variant="outlined"
-                        />
-
-                        <Box
-                          sx={{
-                            alignItems: 'center',
-                            display: 'flex',
-                            ml: -1
-                          }}
-                        >
-                          <Checkbox
-                            checked={values.orgStrength}
-                            name="Organizational Strengthening"
-                            onChange={handleChange}
-                          />
-                          <Typography
-                            color="textSecondary"
-                            variant="body1"
-                          >
-                            Organizational Strengthening
-                          </Typography>
-                          <Checkbox
-                            checked={values.par}
-                            name="par"
-                            onChange={handleChange}
-                          />
-                          <Typography
-                            color="textSecondary"
-                            variant="body1"
-                          >
-                            Policy, Advocacy, Research
-                          </Typography>
-                          <Checkbox
-                            checked={values.instiLink}
-                            name="instiLink"
-                            onChange={handleChange}
-                          />
-                          <Typography
-                            color="textSecondary"
-                            variant="body1"
-                          >
-                            Institutional Linkage
-                          </Typography>
-                          <Checkbox
-                            checked={values.agriProduct}
-                            name="agriProduct"
-                            onChange={handleChange}
-                          />
-                          <Typography
-                            color="textSecondary"
-                            variant="body1"
-                          >
-                            Agricultural Production
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            alignItems: 'center',
-                            display: 'flex',
-                            ml: -1
-                          }}
-                        />
-                        {Boolean(touched.policy && errors.policy) && (
-                          <FormHelperText error>
-                            {errors.policy}
-                          </FormHelperText>
+                  <Table>
+                    <TableBody>
+                      <TableHead>
+                        Apple Inc. (Consolidated Income Statement)
+                      </TableHead>
+                      {/* <TableRow>
+                        <TableCell>
+                          Consolidated Income Statement
+                        </TableCell>
+                      </TableRow> */}
+                      {Object.values(tableData).map((values, index) => <TableRow>
+                        <TableCell>{Object.keys(tableData)[index]}</TableCell>
+                        {values.map((value) => < TableCell>{value}</TableCell>
                         )}
-                        <Box sx={{ py: 2 }}>
-                          <BasicModal />
-                        </Box>
-                      </form>
-                    )}
-                  </Formik>
+                      </TableRow>)}
+                    </TableBody>
+                  </Table>
+                  <BasicModal />
                 </Container>
               </Box>
             </Grid>
