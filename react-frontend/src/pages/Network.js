@@ -14,6 +14,9 @@ import NetworkListToolbar from '../components/dashboard/NetworkListToolbar'
 
 const Network = () => (
     <>
+        <Helmet>
+            <title>Lenders and Investors</title>
+        </Helmet>
         <Container maxWidth={false}><NetworkListToolbar /></Container>
         <Box
             sx={{

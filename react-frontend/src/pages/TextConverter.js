@@ -78,7 +78,7 @@ const TextConverter = () => {
   return (
     <>
       <Helmet>
-        <title>Text Converter</title>
+        <title>Upload</title>
       </Helmet>
       {(!file) ?
         <Box marginTop="250px" marginLeft="400px" align="center">
