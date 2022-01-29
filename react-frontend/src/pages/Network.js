@@ -13,16 +13,16 @@ import { Typography } from '@material-ui/core';
 import NetworkListToolbar from '../components/dashboard/NetworkListToolbar'
 
 const Network = () => (
-  <>
-    <Container maxWidth={false}><NetworkListToolbar /></Container>
-    <Box
-      sx={{
-        backgroundColor: 'background.default',
-        minHeight: '100%',
-        py: 3
-      }}
-    >   
-        <Box sx={{ ml:"1rem", mb:"2rem" }}>
+    <>
+        <Container maxWidth={false}><NetworkListToolbar /></Container>
+        <Box
+            sx={{
+                backgroundColor: 'background.default',
+                minHeight: '100%',
+                py: 3
+            }}
+        >
+            {/* <Box sx={{ ml:"1rem", mb:"2rem" }}>
             <Typography
                 align='left'
                 color="textPrimary"
@@ -91,80 +91,73 @@ const Network = () => (
                     description="Bicol is a region in the Philippines encompassing the southern part of Luzon Island and nearby island provinces. Caramoan, a peninsula in the east, is dotted with caves, limestone cliffs and white-sand beaches. "/>
             </Grid>
             </Grid>
-        </Container>
-        
-        <Box sx={{ ml:"1rem", my:"2rem" }}>
-            <Typography
-                align='left'
-                color="textPrimary"
-                variant="h1"
-            >
-                Investors
-            </Typography>
+        </Container> */}
+
+            <Box sx={{ ml: "1rem", my: "2rem" }}>
+            </Box>
+            <Container maxWidth={false}>
+                <Grid
+                    container
+                    spacing={3}
+                >
+                    <Grid
+                        item
+                        lg={4}
+                        md={6}
+                        xs={12}
+                    >
+                        <MiniDashboard name="Banana" location="Manilla, The Philippines" investors="true"
+                            description="A berry." />
+                    </Grid>
+                    <Grid
+                        item
+                        lg={4}
+                        md={6}
+                        xs={12}
+                    >
+                        <MiniDashboard name="JP Morgan & Chase Co" location="Hong Kong, Hong Kong" investors="true"
+                            description="More well known as the organizer of Code for Good." />
+                    </Grid>
+                    <Grid
+                        item
+                        lg={4}
+                        md={6}
+                        xs={12}
+                    >
+                        <MiniDashboard name="Salikneta Farm" location="San Jose del Monte, The Philippines" investors="true"
+                            description="Farmers can be investors too." />
+                    </Grid>
+                    <Grid
+                        item
+                        lg={4}
+                        md={6}
+                        xs={12}
+                    >
+                        <MiniDashboard name="Coca Cola" location="Manilla, The Philippines" investors="true"
+                            description="." />
+                    </Grid>
+                    <Grid
+                        item
+                        lg={4}
+                        md={6}
+                        xs={12}
+                    >
+                        <MiniDashboard name="Boeing" location="Manilla, The Philippines" investors="true"
+                            description="They sell planes, but but please do not let this distract you from the fact that in 1998, The Undertaker threw Mankind off Hell In A Cell, and plummeted 16 ft through an announcer's table." />
+                    </Grid>
+                    <Grid
+                        item
+                        lg={4}
+                        md={6}
+                        xs={12}
+                    >
+                        <MiniDashboard name="BMW" location="Manilla, The Philippines" investors="true"
+                            description="Vrmm vrmm" />
+                    </Grid>
+                </Grid>
+            </Container>
         </Box>
-        <Container maxWidth={false}>
-            <Grid
-            container
-            spacing={3}
-            >
-            <Grid
-                item
-                lg={4}
-                md={6}
-                xs={12}
-            >
-                <MiniDashboard name="Banana" location="Manilla, The Philippines" investors="true"
-                    description="A berry."/>
-            </Grid>
-            <Grid
-                item
-                lg={4}
-                md={6}
-                xs={12}
-            >
-                <MiniDashboard name="JP Morgan & Chase Co" location="Hong Kong, Hong Kong"  investors="true"
-                    description="More well known as the organizer of Code for Good."/>
-            </Grid>
-            <Grid
-                item
-                lg={4}
-                md={6}
-                xs={12}
-            >
-                <MiniDashboard name="Salikneta Farm" location="San Jose del Monte, The Philippines"  investors="true"
-                    description="Farmers can be investors too."/>
-            </Grid>
-            <Grid
-                item
-                lg={4}
-                md={6}
-                xs={12}
-            >
-                <MiniDashboard name="Coca Cola" location="Manilla, The Philippines"  investors="true"
-                    description="."/>
-            </Grid>
-            <Grid
-                item
-                lg={4}
-                md={6}
-                xs={12}
-            >
-                <MiniDashboard name="Boeing" location="Manilla, The Philippines" investors="true"
-                    description="They sell planes, but but please do not let this distract you from the fact that in 1998, The Undertaker threw Mankind off Hell In A Cell, and plummeted 16 ft through an announcer's table."/>
-            </Grid>
-            <Grid
-                item
-                lg={4}
-                md={6}
-                xs={12}
-            >
-                <MiniDashboard name="BMW" location="Manilla, The Philippines" investors="true"
-                    description="Vrmm vrmm"/>
-            </Grid>
-            </Grid>
-        </Container>
-    </Box>
-  </>
+    </>
 );
 
 export default Network;
