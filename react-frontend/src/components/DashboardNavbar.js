@@ -8,7 +8,8 @@ import {
   Hidden,
   IconButton,
   Button,
-  Toolbar
+  Toolbar,
+  Typography
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
@@ -27,6 +28,7 @@ const DashboardNavbar = ({ onMobileNavOpen, ...rest }) => {
         <RouterLink to="/app/dashboard">
           <Logo height="40px" />
         </RouterLink>
+        <Typography variant="h2" sx={{ marginLeft: '16px' }}> InvestoBit </Typography>
         <Box sx={{ flexGrow: 1 }} />
         <Hidden xlDown>
           <Button variant="contained" href="/app/inbox" endIcon={<NotificationsIcon />}>
