@@ -23,4 +23,4 @@ It leverages the power of open-source community to always have correct informati
 4. Full-Stack
 
 ## Link
-- < 3 minute Youtube Video Link for Project Demo >
+- https://drive.google.com/file/d/1kovvgU1vg51wIjp9eBtWJ8SWvAtKlRF3/view?usp=sharing
