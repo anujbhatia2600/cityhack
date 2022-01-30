@@ -1,16 +1,26 @@
-## RPO Dashboard - Ugat (Team 14)
+# CityHack22 Project Submission
+## Project: InvestoBit
+<img src="../assets/img/LOGOS/logo1.png" width="200" alt="project_logo"/>
 
-## The Problem
-AsiaDHRRA is driven to assist Rural People's Organizations all across South East Asia with developing communities that are just, free, prosperous, living in peace and working in solidarity towards their well-being. They hold a strong belief that data is the key factor in this mission, yet due to the lack of digitization at many RPOs, this key factor is very difficult to aggregate.
-## About our Project (Proposed Solution)
-This is a prototype for a platform solution, which we believe will assist AsiaDHRAA greatly in the digitization of the RPOs under their umbrella. Using data analytics as well as document processing techniques, our platform will not only help AsiaDHRAA with the aggregation of their data, but also with the making of informed decisions based on this data.
-## Quick start
 
-- Clone the repo: `git clone https://github.com/cfgapac21/team-14.git`
+## Team: ByteMachine
+## Members
+- Aakash Goyal (Leader)
+- Anuj Bhatia
+- Karikeya Misra
+- Siddharth Agarwal
 
-- Install dependencies: `npm install`
+## Description of the Project (300 words)
+InvestoBit focuses on providing accurate and critical information needed by customers in order to make investments. 
 
-- Start the server: `npm start`
+It leverages the power of open-source community to always have correct information using blockchain technology to ensure the availability of legitimate data for the customers.
 
-- Views are on: `localhost:3000`
 
+## Tech used (as many as required)
+1. Blockchain
+2. Digital Currency
+3. Machine Learning
+4. Full-Stack
+
+## Link
+- < 3 minute Youtube Video Link for Project Demo >
