@@ -1,6 +1,6 @@
 # CityHack22 Project Submission
 ## Project: InvestoBit
-<img src="../assets/img/LOGOS/logo1.png" width="200" alt="project_logo"/>
+<img src="react-frontend/public/static/AsiaDhraaLogo.png" width="200" alt="project_logo"/>
 
 
 ## Team: ByteMachine
